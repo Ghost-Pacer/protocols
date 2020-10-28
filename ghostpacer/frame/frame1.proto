@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package ghostpacer.frame;
+
+message Vec3 {
+  double x = 1;
+  double y = 2;
+  double z = 3;
+}
+
+message Mat3 {
+  Vec3 row1 = 1;
+  Vec3 row2 = 2;
+  Vec3 row3 = 3;
+}
+
+message Avatar {
+  Vec3 avatarPosition = 1;
+  Vec3 avatarRotation = 2;
+  double animationPhase = 3;
+
+  Vec3 cameraPosition = 4;
+  Mat3 cameraRotation = 5;
+}
+
+message Menu {
+  repeated string entries = 1;
+  uint32 activeEntryIndex = 2;
+}
+
+message Banner {
+  repeated string lines = 1;
+  Position position = 2;
+  enum Position {
+    TOP = 0;
+    CENTER = 1;
+  }
+}
+
+message Legend {
+  bool upActive = 1;
+  bool selectActive = 2;
+  bool downActive = 3;
+}
+
+message Frame {
+  Avatar avatar = 1;
+  Legend legend = 2;
+  Menu menu = 3;
+  Banner banner = 4;
+}

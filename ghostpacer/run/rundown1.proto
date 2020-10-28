@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+import "track_start_point.proto";
+
+package ghostpacer.run;
+
+message DownloadedRun {
+  string name = 1;
+  float startLat = 2;
+  float startLon = 3;
+  float mileSplit = 4;
+
+  TrackStartPoint trackStartPoint = 5;
+
+  repeated float pointLat = 6 [packed = true];
+  repeated float pointLon = 7 [packed = true];
+  repeated float pointElev = 8 [packed = true];
+
+  repeated float savedTime = 9 [packed = true];
+}

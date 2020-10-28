@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package ghostpacer;
+
+message Vec3 {
+  double x = 1;
+  double y = 2;
+  double z = 3;
+}
+
+message Avatar {
+  Vec3 position = 1;
+  Vec3 rotation = 2;
+  double phase = 3;
+}
+
+message Camera {
+  Vec3 position = 1;
+  Vec3 rotation = 2;
+  Mat3 rotMatrix = 3;
+}
+
+message PVRTitle {
+  string line1 = 1;
+  string line2 = 2;
+}
+
+message Frame {
+  Avatar avatar = 1;
+  PVRTitle pvrTitle = 2;
+  Camera camera = 3;
+}
+
+message Mat3 {
+  Vec3 row1 = 1;
+  Vec3 row2 = 2;
+  Vec3 row3 = 3;
+}
