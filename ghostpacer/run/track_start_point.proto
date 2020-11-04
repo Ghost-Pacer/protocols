@@ -3,8 +3,9 @@ syntax = "proto3";
 package ghostpacer.run;
 
 enum TrackStartPoint {
-    P0 = 0;
+    NONE = 0;
     P1 = 1;
     P2 = 2;
     P3 = 3;
+    P4 = 4;
 }

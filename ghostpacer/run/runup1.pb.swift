@@ -33,7 +33,7 @@ struct Ghostpacer_Run_UploadedRun {
 
   var startLon: Float = 0
 
-  var trackStartPoint: Ghostpacer_Run_TrackStartPoint = .p0
+  var trackStartPoint: Ghostpacer_Run_TrackStartPoint = .none
 
   var compLatDist: [Float] = []
 
@@ -103,7 +103,7 @@ extension Ghostpacer_Run_UploadedRun: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if self.startLon != 0 {
       try visitor.visitSingularFloatField(value: self.startLon, fieldNumber: 4)
     }
-    if self.trackStartPoint != .p0 {
+    if self.trackStartPoint != .none {
       try visitor.visitSingularEnumField(value: self.trackStartPoint, fieldNumber: 5)
     }
     if !self.compLatDist.isEmpty {

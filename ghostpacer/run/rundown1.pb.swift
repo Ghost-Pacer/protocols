@@ -33,7 +33,7 @@ struct Ghostpacer_Run_DownloadedRun {
 
   var mileSplit: Float = 0
 
-  var trackStartPoint: Ghostpacer_Run_TrackStartPoint = .p0
+  var trackStartPoint: Ghostpacer_Run_TrackStartPoint = .none
 
   var pointLat: [Float] = []
 
@@ -99,7 +99,7 @@ extension Ghostpacer_Run_DownloadedRun: SwiftProtobuf.Message, SwiftProtobuf._Me
     if self.mileSplit != 0 {
       try visitor.visitSingularFloatField(value: self.mileSplit, fieldNumber: 4)
     }
-    if self.trackStartPoint != .p0 {
+    if self.trackStartPoint != .none {
       try visitor.visitSingularEnumField(value: self.trackStartPoint, fieldNumber: 5)
     }
     if !self.pointLat.isEmpty {

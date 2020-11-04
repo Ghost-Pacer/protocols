@@ -22,32 +22,35 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 
 enum Ghostpacer_Run_TrackStartPoint: SwiftProtobuf.Enum {
   typealias RawValue = Int
-  case p0 // = 0
+  case none // = 0
   case p1 // = 1
   case p2 // = 2
   case p3 // = 3
+  case p4 // = 4
   case UNRECOGNIZED(Int)
 
   init() {
-    self = .p0
+    self = .none
   }
 
   init?(rawValue: Int) {
     switch rawValue {
-    case 0: self = .p0
+    case 0: self = .none
     case 1: self = .p1
     case 2: self = .p2
     case 3: self = .p3
+    case 4: self = .p4
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
 
   var rawValue: Int {
     switch self {
-    case .p0: return 0
+    case .none: return 0
     case .p1: return 1
     case .p2: return 2
     case .p3: return 3
+    case .p4: return 4
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -59,10 +62,11 @@ enum Ghostpacer_Run_TrackStartPoint: SwiftProtobuf.Enum {
 extension Ghostpacer_Run_TrackStartPoint: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
   static var allCases: [Ghostpacer_Run_TrackStartPoint] = [
-    .p0,
+    .none,
     .p1,
     .p2,
     .p3,
+    .p4,
   ]
 }
 
@@ -72,9 +76,10 @@ extension Ghostpacer_Run_TrackStartPoint: CaseIterable {
 
 extension Ghostpacer_Run_TrackStartPoint: SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "P0"),
+    0: .same(proto: "NONE"),
     1: .same(proto: "P1"),
     2: .same(proto: "P2"),
     3: .same(proto: "P3"),
+    4: .same(proto: "P4"),
   ]
 }

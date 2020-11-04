@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x17track_start_point.proto\x12\x0eghostpacer.run*1\n\x0fTrackStartPoint\x12\x06\n\x02P0\x10\x00\x12\x06\n\x02P1\x10\x01\x12\x06\n\x02P2\x10\x02\x12\x06\n\x02P3\x10\x03\x62\x06proto3'
+  serialized_pb=b'\n\x17track_start_point.proto\x12\x0eghostpacer.run*;\n\x0fTrackStartPoint\x12\x08\n\x04NONE\x10\x00\x12\x06\n\x02P1\x10\x01\x12\x06\n\x02P2\x10\x02\x12\x06\n\x02P3\x10\x03\x12\x06\n\x02P4\x10\x04\x62\x06proto3'
 )
 
 _TRACKSTARTPOINT = _descriptor.EnumDescriptor(
@@ -31,7 +31,7 @@ _TRACKSTARTPOINT = _descriptor.EnumDescriptor(
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='P0', index=0, number=0,
+      name='NONE', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
@@ -50,19 +50,25 @@ _TRACKSTARTPOINT = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='P4', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
   serialized_start=43,
-  serialized_end=92,
+  serialized_end=102,
 )
 _sym_db.RegisterEnumDescriptor(_TRACKSTARTPOINT)
 
 TrackStartPoint = enum_type_wrapper.EnumTypeWrapper(_TRACKSTARTPOINT)
-P0 = 0
+NONE = 0
 P1 = 1
 P2 = 2
 P3 = 3
+P4 = 4
 
 
 DESCRIPTOR.enum_types_by_name['TrackStartPoint'] = _TRACKSTARTPOINT
