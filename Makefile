@@ -8,7 +8,9 @@ all: frame run
 clean: frame_clean run_clean
 
 frame: ghostpacer/frame/frame1.proto
-	cd ghostpacer/frame; $(PROTOC) --python_out=$(DEST_DIR)/ --cpp_out=$(DEST_DIR)/ $(SRC_DIR)/frame1.proto
+	cd ghostpacer/frame; \
+	$(PROTOC) --python_out=$(DEST_DIR)/ --cpp_out=$(DEST_DIR)/ $(SRC_DIR)/frame1.proto; \
+	mv $(DEST_DIR)/frame1.pb.cc $(DEST_DIR)/frame1.pb.cpp;
 
 run: ghostpacer/run/rundown1.proto ghostpacer/run/runup1.proto ghostpacer/run/track_start_point.proto
 	cd ghostpacer/run; \
@@ -17,7 +19,7 @@ run: ghostpacer/run/rundown1.proto ghostpacer/run/runup1.proto ghostpacer/run/tr
 	$(PROTOC) --python_out=$(DEST_DIR)/ --swift_out=$(DEST_DIR)/ $(SRC_DIR)/track_start_point.proto;
 
 frame_clean:
-	cd ghostpacer/frame; $(RM) *_pb2.py; $(RM) *.pb.cc; $(RM) *.pb.h;
+	cd ghostpacer/frame; $(RM) *_pb2.py; $(RM) *.pb.cpp; $(RM) *.pb.h;
 
 run_clean:
 	cd ghostpacer/run; $(RM) *_pb2.py; $(RM) *.pb.swift;
