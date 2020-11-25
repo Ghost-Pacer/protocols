@@ -17,4 +17,8 @@ message DownloadedRun {
   repeated float pointElev = 8 [packed = true];
 
   repeated float savedTime = 9 [packed = true];
+
+  bool rubberBand = 10;
+  sint32 rubberBandPos = 11;
+  sint32 rubberBandNeg = 12;
 }

@@ -43,6 +43,12 @@ struct Ghostpacer_Run_DownloadedRun {
 
   var savedTime: [Float] = []
 
+  var rubberBand: Bool = false
+
+  var rubberBandPos: Int32 = 0
+
+  var rubberBandNeg: Int32 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -64,6 +70,9 @@ extension Ghostpacer_Run_DownloadedRun: SwiftProtobuf.Message, SwiftProtobuf._Me
     7: .same(proto: "pointLon"),
     8: .same(proto: "pointElev"),
     9: .same(proto: "savedTime"),
+    10: .same(proto: "rubberBand"),
+    11: .same(proto: "rubberBandPos"),
+    12: .same(proto: "rubberBandNeg"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -81,6 +90,9 @@ extension Ghostpacer_Run_DownloadedRun: SwiftProtobuf.Message, SwiftProtobuf._Me
       case 7: try { try decoder.decodeRepeatedFloatField(value: &self.pointLon) }()
       case 8: try { try decoder.decodeRepeatedFloatField(value: &self.pointElev) }()
       case 9: try { try decoder.decodeRepeatedFloatField(value: &self.savedTime) }()
+      case 10: try { try decoder.decodeSingularBoolField(value: &self.rubberBand) }()
+      case 11: try { try decoder.decodeSingularSInt32Field(value: &self.rubberBandPos) }()
+      case 12: try { try decoder.decodeSingularSInt32Field(value: &self.rubberBandNeg) }()
       default: break
       }
     }
@@ -114,6 +126,15 @@ extension Ghostpacer_Run_DownloadedRun: SwiftProtobuf.Message, SwiftProtobuf._Me
     if !self.savedTime.isEmpty {
       try visitor.visitPackedFloatField(value: self.savedTime, fieldNumber: 9)
     }
+    if self.rubberBand != false {
+      try visitor.visitSingularBoolField(value: self.rubberBand, fieldNumber: 10)
+    }
+    if self.rubberBandPos != 0 {
+      try visitor.visitSingularSInt32Field(value: self.rubberBandPos, fieldNumber: 11)
+    }
+    if self.rubberBandNeg != 0 {
+      try visitor.visitSingularSInt32Field(value: self.rubberBandNeg, fieldNumber: 12)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -127,6 +148,9 @@ extension Ghostpacer_Run_DownloadedRun: SwiftProtobuf.Message, SwiftProtobuf._Me
     if lhs.pointLon != rhs.pointLon {return false}
     if lhs.pointElev != rhs.pointElev {return false}
     if lhs.savedTime != rhs.savedTime {return false}
+    if lhs.rubberBand != rhs.rubberBand {return false}
+    if lhs.rubberBandPos != rhs.rubberBandPos {return false}
+    if lhs.rubberBandNeg != rhs.rubberBandNeg {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
