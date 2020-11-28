@@ -11,7 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-import .track_start_point_pb2 as track__start__point__pb2
+import denovoapp.protocols.ghostpacer.run.track_start_point_pb2 as track__start__point__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
