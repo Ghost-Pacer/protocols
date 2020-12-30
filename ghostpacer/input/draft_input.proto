@@ -1,0 +1,84 @@
+syntax = "proto3";
+
+package ghostpacer.input;
+
+import "google/protobuf/timestamp.proto";
+
+// TODO make this imported from somewhere else
+message Vec3 {
+  double x = 1;
+  double y = 2;
+  double z = 3;
+}
+
+message Vec4 {
+  double w = 1;
+  double x = 2;
+  double y = 3;
+  double z = 4;
+}
+
+
+
+message ButtonEvent {
+  InputEventTimings event_timings = 1;
+  Key key = 2;
+  ClickPattern click_pattern = 3;
+
+  enum Key {
+    DEV = 0;
+    POWER = 1;
+    SELECT = 2;
+    DOWN = 3;
+    UP = 4;
+  }
+
+  enum ClickPattern {
+    SINGLE = 0;
+    HOLD = 1;
+    DOUBLE = 2;
+  }
+}
+
+message GPSSnapshot {
+  InputEventTimings event_timings = 1;
+  double latitude = 2;
+  double longitude = 3;
+  double altitude = 4;
+  double peripheral_speed = 5;
+}
+
+message HeartRateSnapshot {
+  InputEventTimings event_timings = 1;
+  uint32 heart_rate = 2;
+}
+
+
+
+message AmbientLightSnapshot {
+  InputEventTimings event_timings = 1;
+  double intensity = 2;
+}
+
+enum BluetoothMode {
+  POWER_DOWN = 0;
+  DOWNLOAD = 1;
+  WATCH = 2;
+  UPLOAD = 3;
+}
+
+enum TaskStatus {
+  WAITING = 0;
+  PROGRESS = 1;
+  COMPLETE = 2;
+}
+
+message BluetoothStatus {
+  BluetoothMode current_mode = 1;
+  TaskStatus current_status = 2;
+  float progress = 3; // 0 to 1
+}
+
+message BluetoothControllerCommand {
+  BluetoothMode next_mode = 1;
+}
