@@ -29,12 +29,13 @@ message Menu {
 }
 
 message Banner {
-  repeated string lines = 1;
-  Position position = 2;
   enum Position {
     TOP = 0;
     CENTER = 1;
   }
+  repeated string lines = 1;
+  Position position = 2;
+
 }
 
 message Legend {

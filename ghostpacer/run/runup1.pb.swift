@@ -45,6 +45,10 @@ struct Ghostpacer_Run_UploadedRun {
 
   var savedTime: [Float] = []
 
+  var setRunSplit: Float = 0
+
+  var userDist: Float = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -67,6 +71,8 @@ extension Ghostpacer_Run_UploadedRun: SwiftProtobuf.Message, SwiftProtobuf._Mess
     8: .same(proto: "compLonDist"),
     9: .same(proto: "compLon"),
     10: .same(proto: "savedTime"),
+    11: .same(proto: "setRunSplit"),
+    12: .same(proto: "userDist"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -85,6 +91,8 @@ extension Ghostpacer_Run_UploadedRun: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 8: try { try decoder.decodeRepeatedFloatField(value: &self.compLonDist) }()
       case 9: try { try decoder.decodeRepeatedFloatField(value: &self.compLon) }()
       case 10: try { try decoder.decodeRepeatedFloatField(value: &self.savedTime) }()
+      case 11: try { try decoder.decodeSingularFloatField(value: &self.setRunSplit) }()
+      case 12: try { try decoder.decodeSingularFloatField(value: &self.userDist) }()
       default: break
       }
     }
@@ -121,6 +129,12 @@ extension Ghostpacer_Run_UploadedRun: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if !self.savedTime.isEmpty {
       try visitor.visitPackedFloatField(value: self.savedTime, fieldNumber: 10)
     }
+    if self.setRunSplit != 0 {
+      try visitor.visitSingularFloatField(value: self.setRunSplit, fieldNumber: 11)
+    }
+    if self.userDist != 0 {
+      try visitor.visitSingularFloatField(value: self.userDist, fieldNumber: 12)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -135,6 +149,8 @@ extension Ghostpacer_Run_UploadedRun: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if lhs.compLonDist != rhs.compLonDist {return false}
     if lhs.compLon != rhs.compLon {return false}
     if lhs.savedTime != rhs.savedTime {return false}
+    if lhs.setRunSplit != rhs.setRunSplit {return false}
+    if lhs.userDist != rhs.userDist {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

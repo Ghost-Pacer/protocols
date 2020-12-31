@@ -18,4 +18,6 @@ message UploadedRun {
   repeated float compLon = 9 [packed = true];
 
   repeated float savedTime = 10 [packed = true];
+  float setRunSplit = 11;
+  float userDist = 12;
 }
