@@ -2,12 +2,12 @@ syntax = "proto3";
 
 package ghostpacer.input;
 
-import "google/protobuf/timestamp.proto";
+import "timestamp.proto";
 
 message InputEventTimings {
-  google.protobuf.Timestamp peripheral_time = 1;
-  google.protobuf.Timestamp packed_time = 2;
-  google.protobuf.Timestamp unpacked_time = 3;
+  Timestamp peripheral_time = 1;
+  Timestamp packed_time = 2;
+  Timestamp unpacked_time = 3;
 }
 
 message Vec3 {
