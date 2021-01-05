@@ -1,0 +1,3 @@
+Cython==0.29.21
+Jinja2==2.11.2
+https://www.piwheels.org/simple/pyrobuf/pyrobuf-0.9.3-cp35-cp35m-linux_armv7l.whl#sha256=dc34b1133d6aa540137bb5a915fcfbf6409c6140959d7d10b464aa404c963b16
