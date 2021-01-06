@@ -1,0 +1,16 @@
+FROM swift
+RUN apt-get update && apt-get install unzip wget
+RUN wget https://github.com/protocolbuffers/protobuf/releases/download/v3.6.1/protoc-3.6.1-linux-x86_64.zip &&\ 
+    unzip protoc-3.6.1-linux-x86_64.zip -d /protoc &&\
+    cp protoc/bin/protoc /usr/local/bin/ &&\
+    rm -r protoc protoc-3.6.1-linux-x86_64.zip 
+RUN git clone https://github.com/apple/swift-protobuf.git &&\
+	cd swift-protobuf &&\
+	git checkout tags/1.14.0 &&\
+	swift build -c release &&\
+	cp .build/release/protoc-gen-swift /usr/local/bin/ &&\
+	cd .. &&\
+	rm -r swift-protobuf
+WORKDIR /protocols
+COPY . .
+CMD make 
