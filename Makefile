@@ -10,7 +10,20 @@ clean: frame_clean run_clean
 frame: ghostpacer/frame/frame1.proto
 	cd ghostpacer/frame; \
 	$(PROTOC) --python_out=$(DEST_DIR)/ --cpp_out=$(DEST_DIR)/ $(SRC_DIR)/frame1.proto; \
-	mv $(DEST_DIR)/frame1.pb.cc $(DEST_DIR)/frame1.pb.cpp;
+	mv $(DEST_DIR)/frame1.pb.cc $(DEST_DIR)/frame1.pb.cpp; \
+	python3 -m pyrobuf frame1.proto --package=frame1_pb2 --build-dir .; \
+	mv $(DEST_DIR)/lib.linux-armv7l-3.5/frame1_pb2.cpython-35m-arm-linux-gnueabihf.so $(DEST_DIR)/frame1_pb2.so; \
+	rm -rf out temp.* lib.*;
+
+docker_pyrobuf: Dockerfile
+	sudo docker build -t protocols .; \
+	sudo docker run -v "$(shell pwd):/protocols" protocols;
+
+frame_pyrobuf: ghostpacer/frame/frame1.proto
+	cd ghostpacer/frame; \
+	python3 -m pyrobuf frame1.proto --package=frame1_pb2 --build-dir .; \
+	mv $(DEST_DIR)/lib.linux-armv7l-3.5/frame1_pb2.cpython-35m-arm-linux-gnueabihf.so $(DEST_DIR)/frame1_pb2.so; \
+	rm -rf out temp.* lib.*;
 
 run: ghostpacer/run/rundown1.proto ghostpacer/run/runup1.proto ghostpacer/run/track_start_point.proto
 	cd ghostpacer/run; \
