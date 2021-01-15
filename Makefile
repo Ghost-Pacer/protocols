@@ -26,6 +26,12 @@ frame_python: ghostpacer/frame/frame1.proto
 	mv $(DEST_DIR)/lib.linux-armv7l-3.5/frame1_pb2.cpython-35m-arm-linux-gnueabihf.so $(DEST_DIR)/frame1_pb2.so; \
 	rm -rf out temp.* lib.*;
 
+input_python: ghostpacer/input/i2c_devices.proto
+	cd ghostpacer/input; \
+	python3 -m pyrobuf i2c_devices.proto --package=i2c_devices_pb2 --build-dir .; \
+	mv $(DEST_DIR)/lib.linux-armv7l-3.5/i2c_devices_pb2.cpython-35m-arm-linux-gnueabihf.so $(DEST_DIR)/i2c_devices_pb2.so; \
+	rm -rf out temp.* lib.*;
+
 run: ghostpacer/run/rundown1.proto ghostpacer/run/runup1.proto ghostpacer/run/track_start_point.proto
 	cd ghostpacer/run; \
 	$(PROTOC) --python_out=$(DEST_DIR)/ --swift_out=$(DEST_DIR)/ $(SRC_DIR)/rundown1.proto; \
