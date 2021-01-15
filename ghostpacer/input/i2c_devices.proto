@@ -32,4 +32,5 @@ message IMUSnapshot {
   InputEventTimings event_timings = 1;
   Vec4 orientation_quaternion = 2;
   Vec3 linear_acceleration = 3;
+  Vec3 euler = 4;
 }
