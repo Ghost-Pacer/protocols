@@ -4,7 +4,7 @@ DEST_DIR=.
 
 .PHONY: all frame run test clean
 
-all: frame run
+all: frame run input
 clean: frame_clean run_clean
 
 docker_protobuf_build: Dockerfile-protobuf
@@ -18,7 +18,12 @@ docker_pyrobuf_build: Dockerfile-pyrobuf
 frame: ghostpacer/frame/frame1.proto
 	cd ghostpacer/frame; \
 	$(PROTOC) --python_out=$(DEST_DIR)/ --cpp_out=$(DEST_DIR)/ $(SRC_DIR)/frame1.proto; \
-	mv $(DEST_DIR)/frame1.pb.cc $(DEST_DIR)/frame1.pb.cpp; \
+	mv $(DEST_DIR)/frame1.pb.cc $(DEST_DIR)/frame1.pb.cpp; 
+
+input: ghostpacer/input/i2c_devices.proto
+	cd ghostpacer/input; \
+	$(PROTOC) --go_out=$(DEST_DIR)/  --go_opt=paths=source_relative $(SRC_DIR)/timestamp.proto; \
+	$(PROTOC) --go_out=$(DEST_DIR)/  --go_opt=paths=source_relative $(SRC_DIR)/i2c_devices.proto;
 
 frame_python: ghostpacer/frame/frame1.proto
 	cd ghostpacer/frame; \
