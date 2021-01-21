@@ -22,7 +22,6 @@ frame: ghostpacer/frame/frame1.proto
 
 input: ghostpacer/input/i2c_devices.proto
 	cd ghostpacer/input; \
-	$(PROTOC) --go_out=$(DEST_DIR)/  --go_opt=paths=source_relative $(SRC_DIR)/timestamp.proto; \
 	$(PROTOC) --go_out=$(DEST_DIR)/  --go_opt=paths=source_relative $(SRC_DIR)/i2c_devices.proto;
 
 frame_python: ghostpacer/frame/frame1.proto
