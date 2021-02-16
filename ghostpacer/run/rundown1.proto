@@ -14,7 +14,9 @@ message DownloadedRun {
 
   repeated float pointLat = 6 [packed = true];
   repeated float pointLon = 7 [packed = true];
+
   repeated float pointElev = 8 [packed = true];
+  repeated float filteredElevDists = 13 [packed = true];
 
   repeated float savedTime = 9 [packed = true];
 
