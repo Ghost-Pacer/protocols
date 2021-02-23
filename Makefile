@@ -18,7 +18,8 @@ docker_pyrobuf_build: Dockerfile-pyrobuf
 frame: ghostpacer/frame/frame1.proto
 	cd ghostpacer/frame; \
 	$(PROTOC) --python_out=$(DEST_DIR)/ --cpp_out=$(DEST_DIR)/ $(SRC_DIR)/frame1.proto; \
-	mv $(DEST_DIR)/frame1.pb.cc $(DEST_DIR)/frame1.pb.cpp; 
+	mv $(DEST_DIR)/frame1.pb.cc $(DEST_DIR)/frame1.pb.cpp; \
+	$(PROTOC) --go_out=$(DEST_DIR)/ --go_opt=paths=source_relative $(SRC_DIR)/frame1.proto;
 
 input: ghostpacer/input/i2c_devices.proto
 	cd ghostpacer/input; \
