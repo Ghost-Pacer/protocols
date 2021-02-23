@@ -11,7 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-import denovoapp.protocols.ghostpacer.run.track_start_point_pb2 as track__start__point__pb2
+import track_start_point_pb2 as track__start__point__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0erundown1.proto\x12\x0eghostpacer.run\x1a\x17track_start_point.proto\"\xaa\x02\n\rDownloadedRun\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08startLat\x18\x02 \x01(\x02\x12\x10\n\x08startLon\x18\x03 \x01(\x02\x12\x11\n\tmileSplit\x18\x04 \x01(\x02\x12\x38\n\x0ftrackStartPoint\x18\x05 \x01(\x0e\x32\x1f.ghostpacer.run.TrackStartPoint\x12\x14\n\x08pointLat\x18\x06 \x03(\x02\x42\x02\x10\x01\x12\x14\n\x08pointLon\x18\x07 \x03(\x02\x42\x02\x10\x01\x12\x15\n\tpointElev\x18\x08 \x03(\x02\x42\x02\x10\x01\x12\x15\n\tsavedTime\x18\t \x03(\x02\x42\x02\x10\x01\x12\x12\n\nrubberBand\x18\n \x01(\x08\x12\x15\n\rrubberBandPos\x18\x0b \x01(\x11\x12\x15\n\rrubberBandNeg\x18\x0c \x01(\x11\x62\x06proto3'
+  serialized_pb=b'\n\x0erundown1.proto\x12\x0eghostpacer.run\x1a\x17track_start_point.proto\"\xc9\x02\n\rDownloadedRun\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08startLat\x18\x02 \x01(\x02\x12\x10\n\x08startLon\x18\x03 \x01(\x02\x12\x11\n\tmileSplit\x18\x04 \x01(\x02\x12\x38\n\x0ftrackStartPoint\x18\x05 \x01(\x0e\x32\x1f.ghostpacer.run.TrackStartPoint\x12\x14\n\x08pointLat\x18\x06 \x03(\x02\x42\x02\x10\x01\x12\x14\n\x08pointLon\x18\x07 \x03(\x02\x42\x02\x10\x01\x12\x15\n\tpointElev\x18\x08 \x03(\x02\x42\x02\x10\x01\x12\x1d\n\x11\x66ilteredElevDists\x18\r \x03(\x02\x42\x02\x10\x01\x12\x15\n\tsavedTime\x18\t \x03(\x02\x42\x02\x10\x01\x12\x12\n\nrubberBand\x18\n \x01(\x08\x12\x15\n\rrubberBandPos\x18\x0b \x01(\x11\x12\x15\n\rrubberBandNeg\x18\x0c \x01(\x11\x62\x06proto3'
   ,
   dependencies=[track__start__point__pb2.DESCRIPTOR,])
 
@@ -92,28 +92,35 @@ _DOWNLOADEDRUN = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=b'\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='savedTime', full_name='ghostpacer.run.DownloadedRun.savedTime', index=8,
+      name='filteredElevDists', full_name='ghostpacer.run.DownloadedRun.filteredElevDists', index=8,
+      number=13, type=2, cpp_type=6, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='savedTime', full_name='ghostpacer.run.DownloadedRun.savedTime', index=9,
       number=9, type=2, cpp_type=6, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='rubberBand', full_name='ghostpacer.run.DownloadedRun.rubberBand', index=9,
+      name='rubberBand', full_name='ghostpacer.run.DownloadedRun.rubberBand', index=10,
       number=10, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='rubberBandPos', full_name='ghostpacer.run.DownloadedRun.rubberBandPos', index=10,
+      name='rubberBandPos', full_name='ghostpacer.run.DownloadedRun.rubberBandPos', index=11,
       number=11, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='rubberBandNeg', full_name='ghostpacer.run.DownloadedRun.rubberBandNeg', index=11,
+      name='rubberBandNeg', full_name='ghostpacer.run.DownloadedRun.rubberBandNeg', index=12,
       number=12, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -132,7 +139,7 @@ _DOWNLOADEDRUN = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=60,
-  serialized_end=358,
+  serialized_end=389,
 )
 
 _DOWNLOADEDRUN.fields_by_name['trackStartPoint'].enum_type = track__start__point__pb2._TRACKSTARTPOINT
@@ -150,5 +157,6 @@ _sym_db.RegisterMessage(DownloadedRun)
 _DOWNLOADEDRUN.fields_by_name['pointLat']._options = None
 _DOWNLOADEDRUN.fields_by_name['pointLon']._options = None
 _DOWNLOADEDRUN.fields_by_name['pointElev']._options = None
+_DOWNLOADEDRUN.fields_by_name['filteredElevDists']._options = None
 _DOWNLOADEDRUN.fields_by_name['savedTime']._options = None
 # @@protoc_insertion_point(module_scope)

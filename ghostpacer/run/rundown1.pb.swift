@@ -41,6 +41,8 @@ struct Ghostpacer_Run_DownloadedRun {
 
   var pointElev: [Float] = []
 
+  var filteredElevDists: [Float] = []
+
   var savedTime: [Float] = []
 
   var rubberBand: Bool = false
@@ -69,6 +71,7 @@ extension Ghostpacer_Run_DownloadedRun: SwiftProtobuf.Message, SwiftProtobuf._Me
     6: .same(proto: "pointLat"),
     7: .same(proto: "pointLon"),
     8: .same(proto: "pointElev"),
+    13: .same(proto: "filteredElevDists"),
     9: .same(proto: "savedTime"),
     10: .same(proto: "rubberBand"),
     11: .same(proto: "rubberBandPos"),
@@ -93,6 +96,7 @@ extension Ghostpacer_Run_DownloadedRun: SwiftProtobuf.Message, SwiftProtobuf._Me
       case 10: try { try decoder.decodeSingularBoolField(value: &self.rubberBand) }()
       case 11: try { try decoder.decodeSingularSInt32Field(value: &self.rubberBandPos) }()
       case 12: try { try decoder.decodeSingularSInt32Field(value: &self.rubberBandNeg) }()
+      case 13: try { try decoder.decodeRepeatedFloatField(value: &self.filteredElevDists) }()
       default: break
       }
     }
@@ -135,6 +139,9 @@ extension Ghostpacer_Run_DownloadedRun: SwiftProtobuf.Message, SwiftProtobuf._Me
     if self.rubberBandNeg != 0 {
       try visitor.visitSingularSInt32Field(value: self.rubberBandNeg, fieldNumber: 12)
     }
+    if !self.filteredElevDists.isEmpty {
+      try visitor.visitPackedFloatField(value: self.filteredElevDists, fieldNumber: 13)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -147,6 +154,7 @@ extension Ghostpacer_Run_DownloadedRun: SwiftProtobuf.Message, SwiftProtobuf._Me
     if lhs.pointLat != rhs.pointLat {return false}
     if lhs.pointLon != rhs.pointLon {return false}
     if lhs.pointElev != rhs.pointElev {return false}
+    if lhs.filteredElevDists != rhs.filteredElevDists {return false}
     if lhs.savedTime != rhs.savedTime {return false}
     if lhs.rubberBand != rhs.rubberBand {return false}
     if lhs.rubberBandPos != rhs.rubberBandPos {return false}
