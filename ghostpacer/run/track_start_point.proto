@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package ghostpacer.run;
 
+option go_package = "github.com/Ghost-Pacer/protocols/ghostpacer/run/go/runproto";
+
 enum TrackStartPoint {
     NONE = 0;
     P1 = 1;

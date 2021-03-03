@@ -4,6 +4,8 @@ import "track_start_point.proto";
 
 package ghostpacer.run;
 
+option go_package = "github.com/Ghost-Pacer/protocols/ghostpacer/run/go/runproto";
+
 message UploadedRun {
   float totalDistance = 1;
   float startTime = 2;
