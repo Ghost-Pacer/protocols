@@ -19,11 +19,11 @@ frame: ghostpacer/frame/frame1.proto
 	cd ghostpacer/frame; \
 	$(PROTOC) --python_out=$(DEST_DIR)/ --cpp_out=$(DEST_DIR)/ $(SRC_DIR)/frame1.proto; \
 	mv $(DEST_DIR)/frame1.pb.cc $(DEST_DIR)/frame1.pb.cpp; \
-	$(PROTOC) --go_out=$(DEST_DIR)/ --go_opt=paths=source_relative $(SRC_DIR)/frame1.proto;
+	$(PROTOC) --go_out=$(DEST_DIR)/go --go_opt=paths=source_relative $(SRC_DIR)/frame1.proto;
 
 input: ghostpacer/input/i2c_devices.proto
 	cd ghostpacer/input; \
-	$(PROTOC) --go_out=$(DEST_DIR)/  --go_opt=paths=source_relative $(SRC_DIR)/i2c_devices.proto;
+	$(PROTOC) --go_out=$(DEST_DIR)/go/  --go_opt=paths=source_relative $(SRC_DIR)/i2c_devices.proto;
 
 frame_python: ghostpacer/frame/frame1.proto
 	cd ghostpacer/frame; \
@@ -39,9 +39,9 @@ input_python: ghostpacer/input/i2c_devices.proto
 
 run: ghostpacer/run/rundown1.proto ghostpacer/run/runup1.proto ghostpacer/run/track_start_point.proto
 	cd ghostpacer/run; \
-	$(PROTOC) --python_out=$(DEST_DIR)/ --swift_out=$(DEST_DIR)/ $(SRC_DIR)/rundown1.proto; \
-	$(PROTOC) --python_out=$(DEST_DIR)/ --swift_out=$(DEST_DIR)/ $(SRC_DIR)/runup1.proto; \
-	$(PROTOC) --python_out=$(DEST_DIR)/ --swift_out=$(DEST_DIR)/ $(SRC_DIR)/track_start_point.proto;
+	$(PROTOC) --python_out=$(DEST_DIR)/ --swift_out=$(DEST_DIR)/ --go_out=$(DEST_DIR)/go --go_opt=paths=source_relative $(SRC_DIR)/rundown1.proto; \
+	$(PROTOC) --python_out=$(DEST_DIR)/ --swift_out=$(DEST_DIR)/ --go_out=$(DEST_DIR)/go --go_opt=paths=source_relative $(SRC_DIR)/runup1.proto; \
+	$(PROTOC) --python_out=$(DEST_DIR)/ --swift_out=$(DEST_DIR)/ --go_out=$(DEST_DIR)/go --go_opt=paths=source_relative $(SRC_DIR)/track_start_point.proto;
 
 frame_clean:
 	cd ghostpacer/frame; $(RM) *_pb2.py; $(RM) *.pb.cpp; $(RM) *.pb.h;
