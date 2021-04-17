@@ -24,8 +24,7 @@ extern PROTOBUF_INTERNAL_EXPORT_protobuf_frame1_2eproto ::google::protobuf::inte
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_frame1_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Legend;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_frame1_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Menu;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_frame1_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Vec3;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_frame1_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Mat3;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_frame1_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Avatar;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_frame1_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Avatar;
 }  // namespace protobuf_frame1_2eproto
 namespace ghostpacer {
 namespace frame {
@@ -107,10 +106,9 @@ static void InitDefaultsAvatar() {
   ::ghostpacer::frame::Avatar::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_Avatar =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsAvatar}, {
-      &protobuf_frame1_2eproto::scc_info_Vec3.base,
-      &protobuf_frame1_2eproto::scc_info_Mat3.base,}};
+::google::protobuf::internal::SCCInfo<1> scc_info_Avatar =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsAvatar}, {
+      &protobuf_frame1_2eproto::scc_info_Vec3.base,}};
 
 static void InitDefaultsMenu() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -208,10 +206,12 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ghostpacer::frame::Avatar, avatarposition_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ghostpacer::frame::Avatar, avatarrotation_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ghostpacer::frame::Avatar, avatartovec_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ghostpacer::frame::Avatar, avatarupvec_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ghostpacer::frame::Avatar, animationphase_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ghostpacer::frame::Avatar, cameraposition_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ghostpacer::frame::Avatar, camerarotation_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ghostpacer::frame::Avatar, cameratovec_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ghostpacer::frame::Avatar, cameraupvec_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ghostpacer::frame::Menu, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -248,10 +248,10 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 0, -1, sizeof(::ghostpacer::frame::Vec3)},
   { 8, -1, sizeof(::ghostpacer::frame::Mat3)},
   { 16, -1, sizeof(::ghostpacer::frame::Avatar)},
-  { 26, -1, sizeof(::ghostpacer::frame::Menu)},
-  { 33, -1, sizeof(::ghostpacer::frame::Banner)},
-  { 40, -1, sizeof(::ghostpacer::frame::Legend)},
-  { 48, -1, sizeof(::ghostpacer::frame::Frame)},
+  { 28, -1, sizeof(::ghostpacer::frame::Menu)},
+  { 35, -1, sizeof(::ghostpacer::frame::Banner)},
+  { 42, -1, sizeof(::ghostpacer::frame::Legend)},
+  { 50, -1, sizeof(::ghostpacer::frame::Frame)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -289,26 +289,30 @@ void AddDescriptorsImpl() {
       "\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\022\t\n\001z\030\003 \001(\001\"x\n\004Mat"
       "3\022$\n\004row1\030\001 \001(\0132\026.ghostpacer.frame.Vec3\022"
       "$\n\004row2\030\002 \001(\0132\026.ghostpacer.frame.Vec3\022$\n"
-      "\004row3\030\003 \001(\0132\026.ghostpacer.frame.Vec3\"\340\001\n\006"
+      "\004row3\030\003 \001(\0132\026.ghostpacer.frame.Vec3\"\300\002\n\006"
       "Avatar\022.\n\016avatarPosition\030\001 \001(\0132\026.ghostpa"
-      "cer.frame.Vec3\022.\n\016avatarRotation\030\002 \001(\0132\026"
-      ".ghostpacer.frame.Vec3\022\026\n\016animationPhase"
-      "\030\003 \001(\001\022.\n\016cameraPosition\030\004 \001(\0132\026.ghostpa"
-      "cer.frame.Vec3\022.\n\016cameraRotation\030\005 \001(\0132\026"
-      ".ghostpacer.frame.Mat3\"1\n\004Menu\022\017\n\007entrie"
-      "s\030\001 \003(\t\022\030\n\020activeEntryIndex\030\002 \001(\r\"m\n\006Ban"
-      "ner\022\r\n\005lines\030\001 \003(\t\0223\n\010position\030\002 \001(\0162!.g"
-      "hostpacer.frame.Banner.Position\"\037\n\010Posit"
-      "ion\022\007\n\003TOP\020\000\022\n\n\006CENTER\020\001\"D\n\006Legend\022\020\n\010up"
-      "Active\030\001 \001(\010\022\024\n\014selectActive\030\002 \001(\010\022\022\n\ndo"
-      "wnActive\030\003 \001(\010\"\253\001\n\005Frame\022(\n\006avatar\030\001 \001(\013"
-      "2\030.ghostpacer.frame.Avatar\022(\n\006legend\030\002 \001"
-      "(\0132\030.ghostpacer.frame.Legend\022$\n\004menu\030\003 \001"
-      "(\0132\026.ghostpacer.frame.Menu\022(\n\006banner\030\004 \001"
-      "(\0132\030.ghostpacer.frame.Bannerb\006proto3"
+      "cer.frame.Vec3\022+\n\013avatarToVec\030\006 \001(\0132\026.gh"
+      "ostpacer.frame.Vec3\022+\n\013avatarUpVec\030\007 \001(\013"
+      "2\026.ghostpacer.frame.Vec3\022\026\n\016animationPha"
+      "se\030\003 \001(\001\022.\n\016cameraPosition\030\004 \001(\0132\026.ghost"
+      "pacer.frame.Vec3\022+\n\013cameraToVec\030\010 \001(\0132\026."
+      "ghostpacer.frame.Vec3\022+\n\013cameraUpVec\030\t \001"
+      "(\0132\026.ghostpacer.frame.Vec3J\004\010\002\020\003J\004\010\005\020\006\"1"
+      "\n\004Menu\022\017\n\007entries\030\001 \003(\t\022\030\n\020activeEntryIn"
+      "dex\030\002 \001(\r\"m\n\006Banner\022\r\n\005lines\030\001 \003(\t\0223\n\010po"
+      "sition\030\002 \001(\0162!.ghostpacer.frame.Banner.P"
+      "osition\"\037\n\010Position\022\007\n\003TOP\020\000\022\n\n\006CENTER\020\001"
+      "\"D\n\006Legend\022\020\n\010upActive\030\001 \001(\010\022\024\n\014selectAc"
+      "tive\030\002 \001(\010\022\022\n\ndownActive\030\003 \001(\010\"\253\001\n\005Frame"
+      "\022(\n\006avatar\030\001 \001(\0132\030.ghostpacer.frame.Avat"
+      "ar\022(\n\006legend\030\002 \001(\0132\030.ghostpacer.frame.Le"
+      "gend\022$\n\004menu\030\003 \001(\0132\026.ghostpacer.frame.Me"
+      "nu\022(\n\006banner\030\004 \001(\0132\030.ghostpacer.frame.Ba"
+      "nnerBAZ\?github.com/Ghost-Pacer/protocols"
+      "/ghostpacer/frame/go/frameprotob\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 836);
+      descriptor, 999);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "frame1.proto", &protobuf_RegisterTypes);
 }
@@ -982,19 +986,25 @@ void Mat3::InternalSwap(Mat3* other) {
 void Avatar::InitAsDefaultInstance() {
   ::ghostpacer::frame::_Avatar_default_instance_._instance.get_mutable()->avatarposition_ = const_cast< ::ghostpacer::frame::Vec3*>(
       ::ghostpacer::frame::Vec3::internal_default_instance());
-  ::ghostpacer::frame::_Avatar_default_instance_._instance.get_mutable()->avatarrotation_ = const_cast< ::ghostpacer::frame::Vec3*>(
+  ::ghostpacer::frame::_Avatar_default_instance_._instance.get_mutable()->avatartovec_ = const_cast< ::ghostpacer::frame::Vec3*>(
+      ::ghostpacer::frame::Vec3::internal_default_instance());
+  ::ghostpacer::frame::_Avatar_default_instance_._instance.get_mutable()->avatarupvec_ = const_cast< ::ghostpacer::frame::Vec3*>(
       ::ghostpacer::frame::Vec3::internal_default_instance());
   ::ghostpacer::frame::_Avatar_default_instance_._instance.get_mutable()->cameraposition_ = const_cast< ::ghostpacer::frame::Vec3*>(
       ::ghostpacer::frame::Vec3::internal_default_instance());
-  ::ghostpacer::frame::_Avatar_default_instance_._instance.get_mutable()->camerarotation_ = const_cast< ::ghostpacer::frame::Mat3*>(
-      ::ghostpacer::frame::Mat3::internal_default_instance());
+  ::ghostpacer::frame::_Avatar_default_instance_._instance.get_mutable()->cameratovec_ = const_cast< ::ghostpacer::frame::Vec3*>(
+      ::ghostpacer::frame::Vec3::internal_default_instance());
+  ::ghostpacer::frame::_Avatar_default_instance_._instance.get_mutable()->cameraupvec_ = const_cast< ::ghostpacer::frame::Vec3*>(
+      ::ghostpacer::frame::Vec3::internal_default_instance());
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Avatar::kAvatarPositionFieldNumber;
-const int Avatar::kAvatarRotationFieldNumber;
+const int Avatar::kAvatarToVecFieldNumber;
+const int Avatar::kAvatarUpVecFieldNumber;
 const int Avatar::kAnimationPhaseFieldNumber;
 const int Avatar::kCameraPositionFieldNumber;
-const int Avatar::kCameraRotationFieldNumber;
+const int Avatar::kCameraToVecFieldNumber;
+const int Avatar::kCameraUpVecFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Avatar::Avatar()
@@ -1013,20 +1023,30 @@ Avatar::Avatar(const Avatar& from)
   } else {
     avatarposition_ = NULL;
   }
-  if (from.has_avatarrotation()) {
-    avatarrotation_ = new ::ghostpacer::frame::Vec3(*from.avatarrotation_);
-  } else {
-    avatarrotation_ = NULL;
-  }
   if (from.has_cameraposition()) {
     cameraposition_ = new ::ghostpacer::frame::Vec3(*from.cameraposition_);
   } else {
     cameraposition_ = NULL;
   }
-  if (from.has_camerarotation()) {
-    camerarotation_ = new ::ghostpacer::frame::Mat3(*from.camerarotation_);
+  if (from.has_avatartovec()) {
+    avatartovec_ = new ::ghostpacer::frame::Vec3(*from.avatartovec_);
   } else {
-    camerarotation_ = NULL;
+    avatartovec_ = NULL;
+  }
+  if (from.has_avatarupvec()) {
+    avatarupvec_ = new ::ghostpacer::frame::Vec3(*from.avatarupvec_);
+  } else {
+    avatarupvec_ = NULL;
+  }
+  if (from.has_cameratovec()) {
+    cameratovec_ = new ::ghostpacer::frame::Vec3(*from.cameratovec_);
+  } else {
+    cameratovec_ = NULL;
+  }
+  if (from.has_cameraupvec()) {
+    cameraupvec_ = new ::ghostpacer::frame::Vec3(*from.cameraupvec_);
+  } else {
+    cameraupvec_ = NULL;
   }
   animationphase_ = from.animationphase_;
   // @@protoc_insertion_point(copy_constructor:ghostpacer.frame.Avatar)
@@ -1045,9 +1065,11 @@ Avatar::~Avatar() {
 
 void Avatar::SharedDtor() {
   if (this != internal_default_instance()) delete avatarposition_;
-  if (this != internal_default_instance()) delete avatarrotation_;
   if (this != internal_default_instance()) delete cameraposition_;
-  if (this != internal_default_instance()) delete camerarotation_;
+  if (this != internal_default_instance()) delete avatartovec_;
+  if (this != internal_default_instance()) delete avatarupvec_;
+  if (this != internal_default_instance()) delete cameratovec_;
+  if (this != internal_default_instance()) delete cameraupvec_;
 }
 
 void Avatar::SetCachedSize(int size) const {
@@ -1074,18 +1096,26 @@ void Avatar::Clear() {
     delete avatarposition_;
   }
   avatarposition_ = NULL;
-  if (GetArenaNoVirtual() == NULL && avatarrotation_ != NULL) {
-    delete avatarrotation_;
-  }
-  avatarrotation_ = NULL;
   if (GetArenaNoVirtual() == NULL && cameraposition_ != NULL) {
     delete cameraposition_;
   }
   cameraposition_ = NULL;
-  if (GetArenaNoVirtual() == NULL && camerarotation_ != NULL) {
-    delete camerarotation_;
+  if (GetArenaNoVirtual() == NULL && avatartovec_ != NULL) {
+    delete avatartovec_;
   }
-  camerarotation_ = NULL;
+  avatartovec_ = NULL;
+  if (GetArenaNoVirtual() == NULL && avatarupvec_ != NULL) {
+    delete avatarupvec_;
+  }
+  avatarupvec_ = NULL;
+  if (GetArenaNoVirtual() == NULL && cameratovec_ != NULL) {
+    delete cameratovec_;
+  }
+  cameratovec_ = NULL;
+  if (GetArenaNoVirtual() == NULL && cameraupvec_ != NULL) {
+    delete cameraupvec_;
+  }
+  cameraupvec_ = NULL;
   animationphase_ = 0;
   _internal_metadata_.Clear();
 }
@@ -1106,18 +1136,6 @@ bool Avatar::MergePartialFromCodedStream(
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_avatarposition()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .ghostpacer.frame.Vec3 avatarRotation = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_avatarrotation()));
         } else {
           goto handle_unusual;
         }
@@ -1150,12 +1168,48 @@ bool Avatar::MergePartialFromCodedStream(
         break;
       }
 
-      // .ghostpacer.frame.Mat3 cameraRotation = 5;
-      case 5: {
+      // .ghostpacer.frame.Vec3 avatarToVec = 6;
+      case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_camerarotation()));
+               input, mutable_avatartovec()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .ghostpacer.frame.Vec3 avatarUpVec = 7;
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(58u /* 58 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_avatarupvec()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .ghostpacer.frame.Vec3 cameraToVec = 8;
+      case 8: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(66u /* 66 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_cameratovec()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .ghostpacer.frame.Vec3 cameraUpVec = 9;
+      case 9: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(74u /* 74 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_cameraupvec()));
         } else {
           goto handle_unusual;
         }
@@ -1194,12 +1248,6 @@ void Avatar::SerializeWithCachedSizes(
       1, this->_internal_avatarposition(), output);
   }
 
-  // .ghostpacer.frame.Vec3 avatarRotation = 2;
-  if (this->has_avatarrotation()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->_internal_avatarrotation(), output);
-  }
-
   // double animationPhase = 3;
   if (this->animationphase() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->animationphase(), output);
@@ -1211,10 +1259,28 @@ void Avatar::SerializeWithCachedSizes(
       4, this->_internal_cameraposition(), output);
   }
 
-  // .ghostpacer.frame.Mat3 cameraRotation = 5;
-  if (this->has_camerarotation()) {
+  // .ghostpacer.frame.Vec3 avatarToVec = 6;
+  if (this->has_avatartovec()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, this->_internal_camerarotation(), output);
+      6, this->_internal_avatartovec(), output);
+  }
+
+  // .ghostpacer.frame.Vec3 avatarUpVec = 7;
+  if (this->has_avatarupvec()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      7, this->_internal_avatarupvec(), output);
+  }
+
+  // .ghostpacer.frame.Vec3 cameraToVec = 8;
+  if (this->has_cameratovec()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      8, this->_internal_cameratovec(), output);
+  }
+
+  // .ghostpacer.frame.Vec3 cameraUpVec = 9;
+  if (this->has_cameraupvec()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      9, this->_internal_cameraupvec(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1238,13 +1304,6 @@ void Avatar::SerializeWithCachedSizes(
         1, this->_internal_avatarposition(), deterministic, target);
   }
 
-  // .ghostpacer.frame.Vec3 avatarRotation = 2;
-  if (this->has_avatarrotation()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, this->_internal_avatarrotation(), deterministic, target);
-  }
-
   // double animationPhase = 3;
   if (this->animationphase() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->animationphase(), target);
@@ -1257,11 +1316,32 @@ void Avatar::SerializeWithCachedSizes(
         4, this->_internal_cameraposition(), deterministic, target);
   }
 
-  // .ghostpacer.frame.Mat3 cameraRotation = 5;
-  if (this->has_camerarotation()) {
+  // .ghostpacer.frame.Vec3 avatarToVec = 6;
+  if (this->has_avatartovec()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        5, this->_internal_camerarotation(), deterministic, target);
+        6, this->_internal_avatartovec(), deterministic, target);
+  }
+
+  // .ghostpacer.frame.Vec3 avatarUpVec = 7;
+  if (this->has_avatarupvec()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        7, this->_internal_avatarupvec(), deterministic, target);
+  }
+
+  // .ghostpacer.frame.Vec3 cameraToVec = 8;
+  if (this->has_cameratovec()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        8, this->_internal_cameratovec(), deterministic, target);
+  }
+
+  // .ghostpacer.frame.Vec3 cameraUpVec = 9;
+  if (this->has_cameraupvec()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        9, this->_internal_cameraupvec(), deterministic, target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1288,13 +1368,6 @@ size_t Avatar::ByteSizeLong() const {
         *avatarposition_);
   }
 
-  // .ghostpacer.frame.Vec3 avatarRotation = 2;
-  if (this->has_avatarrotation()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *avatarrotation_);
-  }
-
   // .ghostpacer.frame.Vec3 cameraPosition = 4;
   if (this->has_cameraposition()) {
     total_size += 1 +
@@ -1302,11 +1375,32 @@ size_t Avatar::ByteSizeLong() const {
         *cameraposition_);
   }
 
-  // .ghostpacer.frame.Mat3 cameraRotation = 5;
-  if (this->has_camerarotation()) {
+  // .ghostpacer.frame.Vec3 avatarToVec = 6;
+  if (this->has_avatartovec()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *camerarotation_);
+        *avatartovec_);
+  }
+
+  // .ghostpacer.frame.Vec3 avatarUpVec = 7;
+  if (this->has_avatarupvec()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *avatarupvec_);
+  }
+
+  // .ghostpacer.frame.Vec3 cameraToVec = 8;
+  if (this->has_cameratovec()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *cameratovec_);
+  }
+
+  // .ghostpacer.frame.Vec3 cameraUpVec = 9;
+  if (this->has_cameraupvec()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *cameraupvec_);
   }
 
   // double animationPhase = 3;
@@ -1344,14 +1438,20 @@ void Avatar::MergeFrom(const Avatar& from) {
   if (from.has_avatarposition()) {
     mutable_avatarposition()->::ghostpacer::frame::Vec3::MergeFrom(from.avatarposition());
   }
-  if (from.has_avatarrotation()) {
-    mutable_avatarrotation()->::ghostpacer::frame::Vec3::MergeFrom(from.avatarrotation());
-  }
   if (from.has_cameraposition()) {
     mutable_cameraposition()->::ghostpacer::frame::Vec3::MergeFrom(from.cameraposition());
   }
-  if (from.has_camerarotation()) {
-    mutable_camerarotation()->::ghostpacer::frame::Mat3::MergeFrom(from.camerarotation());
+  if (from.has_avatartovec()) {
+    mutable_avatartovec()->::ghostpacer::frame::Vec3::MergeFrom(from.avatartovec());
+  }
+  if (from.has_avatarupvec()) {
+    mutable_avatarupvec()->::ghostpacer::frame::Vec3::MergeFrom(from.avatarupvec());
+  }
+  if (from.has_cameratovec()) {
+    mutable_cameratovec()->::ghostpacer::frame::Vec3::MergeFrom(from.cameratovec());
+  }
+  if (from.has_cameraupvec()) {
+    mutable_cameraupvec()->::ghostpacer::frame::Vec3::MergeFrom(from.cameraupvec());
   }
   if (from.animationphase() != 0) {
     set_animationphase(from.animationphase());
@@ -1383,9 +1483,11 @@ void Avatar::Swap(Avatar* other) {
 void Avatar::InternalSwap(Avatar* other) {
   using std::swap;
   swap(avatarposition_, other->avatarposition_);
-  swap(avatarrotation_, other->avatarrotation_);
   swap(cameraposition_, other->cameraposition_);
-  swap(camerarotation_, other->camerarotation_);
+  swap(avatartovec_, other->avatartovec_);
+  swap(avatarupvec_, other->avatarupvec_);
+  swap(cameratovec_, other->cameratovec_);
+  swap(cameraupvec_, other->cameraupvec_);
   swap(animationphase_, other->animationphase_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
