@@ -4,6 +4,8 @@ import "timestamp.proto";
 
 package ghostpacer.input;
 
+option go_package = "github.com/Ghost-Pacer/protocols/ghostpacer/input/go/inputproto";
+
 message InputEventTimings {
   google.protobuf.Timestamp peripheral_time = 1;
   google.protobuf.Timestamp packed_time = 2;

@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package ghostpacer.frame;
 
+option go_package = "github.com/Ghost-Pacer/protocols/ghostpacer/frame/go/frameproto";
+
 message Vec3 {
   double x = 1;
   double y = 2;
