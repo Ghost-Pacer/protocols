@@ -17,12 +17,16 @@ message Mat3 {
 }
 
 message Avatar {
+  reserved 2, 5;
+
   Vec3 avatarPosition = 1;
-  Vec3 avatarRotation = 2;
+  Vec3 avatarToVec = 6;
+  Vec3 avatarUpVec = 7;
   double animationPhase = 3;
 
   Vec3 cameraPosition = 4;
-  Mat3 cameraRotation = 5;
+  Vec3 cameraToVec = 8;
+  Vec3 cameraUpVec = 9;
 }
 
 message Menu {
