@@ -7,11 +7,11 @@ DEST_DIR=.
 all: frame run input
 clean: frame_clean run_clean
 
-docker_protobuf_build: Dockerfile-protobuf
+protobuf: Dockerfile-protobuf
 	sudo docker build -f Dockerfile-protobuf -t protobuf-build .; \
 	sudo docker run -v "$(shell pwd):/protocols" protobuf-build;
 
-docker_pyrobuf_build: Dockerfile-pyrobuf
+pyrobuf: Dockerfile-pyrobuf
 	sudo docker build -f Dockerfile-pyrobuf -t pyrobuf-build .; \
 	sudo docker run -v "$(shell pwd):/protocols" pyrobuf-build;
 

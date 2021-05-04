@@ -20,12 +20,26 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Ghostpacer_Run_UploadedRun {
+struct Ghostpacer_Run_TimedPoint {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var totalDistance: Float = 0
+  var x: Float = 0
+
+  var y: Float = 0
+
+  var time: Float = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct Ghostpacer_Run_UploadedRun {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var startTime: Float = 0
 
@@ -33,17 +47,7 @@ struct Ghostpacer_Run_UploadedRun {
 
   var startLon: Float = 0
 
-  var trackStartPoint: Ghostpacer_Run_TrackStartPoint = .none
-
-  var compLatDist: [Float] = []
-
-  var compLat: [Float] = []
-
-  var compLonDist: [Float] = []
-
-  var compLon: [Float] = []
-
-  var savedTime: [Float] = []
+  var timedPoints: [Ghostpacer_Run_TimedPoint] = []
 
   var setRunSplit: Float = 0
 
@@ -58,19 +62,57 @@ struct Ghostpacer_Run_UploadedRun {
 
 fileprivate let _protobuf_package = "ghostpacer.run"
 
+extension Ghostpacer_Run_TimedPoint: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TimedPoint"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "x"),
+    2: .same(proto: "y"),
+    3: .same(proto: "time"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularFloatField(value: &self.x) }()
+      case 2: try { try decoder.decodeSingularFloatField(value: &self.y) }()
+      case 3: try { try decoder.decodeSingularFloatField(value: &self.time) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.x != 0 {
+      try visitor.visitSingularFloatField(value: self.x, fieldNumber: 1)
+    }
+    if self.y != 0 {
+      try visitor.visitSingularFloatField(value: self.y, fieldNumber: 2)
+    }
+    if self.time != 0 {
+      try visitor.visitSingularFloatField(value: self.time, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Ghostpacer_Run_TimedPoint, rhs: Ghostpacer_Run_TimedPoint) -> Bool {
+    if lhs.x != rhs.x {return false}
+    if lhs.y != rhs.y {return false}
+    if lhs.time != rhs.time {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension Ghostpacer_Run_UploadedRun: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UploadedRun"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "totalDistance"),
     2: .same(proto: "startTime"),
     3: .same(proto: "startLat"),
     4: .same(proto: "startLon"),
-    5: .same(proto: "trackStartPoint"),
-    6: .same(proto: "compLatDist"),
-    7: .same(proto: "compLat"),
-    8: .same(proto: "compLonDist"),
-    9: .same(proto: "compLon"),
-    10: .same(proto: "savedTime"),
+    13: .same(proto: "timedPoints"),
     11: .same(proto: "setRunSplit"),
     12: .same(proto: "userDist"),
   ]
@@ -81,27 +123,18 @@ extension Ghostpacer_Run_UploadedRun: SwiftProtobuf.Message, SwiftProtobuf._Mess
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularFloatField(value: &self.totalDistance) }()
       case 2: try { try decoder.decodeSingularFloatField(value: &self.startTime) }()
       case 3: try { try decoder.decodeSingularFloatField(value: &self.startLat) }()
       case 4: try { try decoder.decodeSingularFloatField(value: &self.startLon) }()
-      case 5: try { try decoder.decodeSingularEnumField(value: &self.trackStartPoint) }()
-      case 6: try { try decoder.decodeRepeatedFloatField(value: &self.compLatDist) }()
-      case 7: try { try decoder.decodeRepeatedFloatField(value: &self.compLat) }()
-      case 8: try { try decoder.decodeRepeatedFloatField(value: &self.compLonDist) }()
-      case 9: try { try decoder.decodeRepeatedFloatField(value: &self.compLon) }()
-      case 10: try { try decoder.decodeRepeatedFloatField(value: &self.savedTime) }()
       case 11: try { try decoder.decodeSingularFloatField(value: &self.setRunSplit) }()
       case 12: try { try decoder.decodeSingularFloatField(value: &self.userDist) }()
+      case 13: try { try decoder.decodeRepeatedMessageField(value: &self.timedPoints) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.totalDistance != 0 {
-      try visitor.visitSingularFloatField(value: self.totalDistance, fieldNumber: 1)
-    }
     if self.startTime != 0 {
       try visitor.visitSingularFloatField(value: self.startTime, fieldNumber: 2)
     }
@@ -111,44 +144,23 @@ extension Ghostpacer_Run_UploadedRun: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if self.startLon != 0 {
       try visitor.visitSingularFloatField(value: self.startLon, fieldNumber: 4)
     }
-    if self.trackStartPoint != .none {
-      try visitor.visitSingularEnumField(value: self.trackStartPoint, fieldNumber: 5)
-    }
-    if !self.compLatDist.isEmpty {
-      try visitor.visitPackedFloatField(value: self.compLatDist, fieldNumber: 6)
-    }
-    if !self.compLat.isEmpty {
-      try visitor.visitPackedFloatField(value: self.compLat, fieldNumber: 7)
-    }
-    if !self.compLonDist.isEmpty {
-      try visitor.visitPackedFloatField(value: self.compLonDist, fieldNumber: 8)
-    }
-    if !self.compLon.isEmpty {
-      try visitor.visitPackedFloatField(value: self.compLon, fieldNumber: 9)
-    }
-    if !self.savedTime.isEmpty {
-      try visitor.visitPackedFloatField(value: self.savedTime, fieldNumber: 10)
-    }
     if self.setRunSplit != 0 {
       try visitor.visitSingularFloatField(value: self.setRunSplit, fieldNumber: 11)
     }
     if self.userDist != 0 {
       try visitor.visitSingularFloatField(value: self.userDist, fieldNumber: 12)
     }
+    if !self.timedPoints.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.timedPoints, fieldNumber: 13)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Ghostpacer_Run_UploadedRun, rhs: Ghostpacer_Run_UploadedRun) -> Bool {
-    if lhs.totalDistance != rhs.totalDistance {return false}
     if lhs.startTime != rhs.startTime {return false}
     if lhs.startLat != rhs.startLat {return false}
     if lhs.startLon != rhs.startLon {return false}
-    if lhs.trackStartPoint != rhs.trackStartPoint {return false}
-    if lhs.compLatDist != rhs.compLatDist {return false}
-    if lhs.compLat != rhs.compLat {return false}
-    if lhs.compLonDist != rhs.compLonDist {return false}
-    if lhs.compLon != rhs.compLon {return false}
-    if lhs.savedTime != rhs.savedTime {return false}
+    if lhs.timedPoints != rhs.timedPoints {return false}
     if lhs.setRunSplit != rhs.setRunSplit {return false}
     if lhs.userDist != rhs.userDist {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

@@ -12,7 +12,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-import track_start_point_pb2 as track__start__point__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,11 +19,55 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ghostpacer.run',
   syntax='proto3',
   serialized_options=_b('Z;github.com/Ghost-Pacer/protocols/ghostpacer/run/go/runproto'),
-  serialized_pb=_b('\n\x0crunup1.proto\x12\x0eghostpacer.run\x1a\x17track_start_point.proto\"\xaf\x02\n\x0bUploadedRun\x12\x15\n\rtotalDistance\x18\x01 \x01(\x02\x12\x11\n\tstartTime\x18\x02 \x01(\x02\x12\x10\n\x08startLat\x18\x03 \x01(\x02\x12\x10\n\x08startLon\x18\x04 \x01(\x02\x12\x38\n\x0ftrackStartPoint\x18\x05 \x01(\x0e\x32\x1f.ghostpacer.run.TrackStartPoint\x12\x17\n\x0b\x63ompLatDist\x18\x06 \x03(\x02\x42\x02\x10\x01\x12\x13\n\x07\x63ompLat\x18\x07 \x03(\x02\x42\x02\x10\x01\x12\x17\n\x0b\x63ompLonDist\x18\x08 \x03(\x02\x42\x02\x10\x01\x12\x13\n\x07\x63ompLon\x18\t \x03(\x02\x42\x02\x10\x01\x12\x15\n\tsavedTime\x18\n \x03(\x02\x42\x02\x10\x01\x12\x13\n\x0bsetRunSplit\x18\x0b \x01(\x02\x12\x10\n\x08userDist\x18\x0c \x01(\x02\x42=Z;github.com/Ghost-Pacer/protocols/ghostpacer/run/go/runprotob\x06proto3')
-  ,
-  dependencies=[track__start__point__pb2.DESCRIPTOR,])
+  serialized_pb=_b('\n\x0crunup1.proto\x12\x0eghostpacer.run\"0\n\nTimedPoint\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\x0c\n\x04time\x18\x03 \x01(\x02\"\xc6\x01\n\x0bUploadedRun\x12\x11\n\tstartTime\x18\x02 \x01(\x02\x12\x10\n\x08startLat\x18\x03 \x01(\x02\x12\x10\n\x08startLon\x18\x04 \x01(\x02\x12/\n\x0btimedPoints\x18\r \x03(\x0b\x32\x1a.ghostpacer.run.TimedPoint\x12\x13\n\x0bsetRunSplit\x18\x0b \x01(\x02\x12\x10\n\x08userDist\x18\x0c \x01(\x02J\x04\x08\x01\x10\x02J\x04\x08\x05\x10\x06J\x04\x08\x06\x10\x07J\x04\x08\x07\x10\x08J\x04\x08\x08\x10\tJ\x04\x08\t\x10\nJ\x04\x08\n\x10\x0b\x42=Z;github.com/Ghost-Pacer/protocols/ghostpacer/run/go/runprotob\x06proto3')
+)
 
 
+
+
+_TIMEDPOINT = _descriptor.Descriptor(
+  name='TimedPoint',
+  full_name='ghostpacer.run.TimedPoint',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='x', full_name='ghostpacer.run.TimedPoint.x', index=0,
+      number=1, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='y', full_name='ghostpacer.run.TimedPoint.y', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='time', full_name='ghostpacer.run.TimedPoint.time', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=32,
+  serialized_end=80,
+)
 
 
 _UPLOADEDRUN = _descriptor.Descriptor(
@@ -35,84 +78,42 @@ _UPLOADEDRUN = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='totalDistance', full_name='ghostpacer.run.UploadedRun.totalDistance', index=0,
-      number=1, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='startTime', full_name='ghostpacer.run.UploadedRun.startTime', index=1,
+      name='startTime', full_name='ghostpacer.run.UploadedRun.startTime', index=0,
       number=2, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='startLat', full_name='ghostpacer.run.UploadedRun.startLat', index=2,
+      name='startLat', full_name='ghostpacer.run.UploadedRun.startLat', index=1,
       number=3, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='startLon', full_name='ghostpacer.run.UploadedRun.startLon', index=3,
+      name='startLon', full_name='ghostpacer.run.UploadedRun.startLon', index=2,
       number=4, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='trackStartPoint', full_name='ghostpacer.run.UploadedRun.trackStartPoint', index=4,
-      number=5, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
+      name='timedPoints', full_name='ghostpacer.run.UploadedRun.timedPoints', index=3,
+      number=13, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='compLatDist', full_name='ghostpacer.run.UploadedRun.compLatDist', index=5,
-      number=6, type=2, cpp_type=6, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\020\001'), file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='compLat', full_name='ghostpacer.run.UploadedRun.compLat', index=6,
-      number=7, type=2, cpp_type=6, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\020\001'), file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='compLonDist', full_name='ghostpacer.run.UploadedRun.compLonDist', index=7,
-      number=8, type=2, cpp_type=6, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\020\001'), file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='compLon', full_name='ghostpacer.run.UploadedRun.compLon', index=8,
-      number=9, type=2, cpp_type=6, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\020\001'), file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='savedTime', full_name='ghostpacer.run.UploadedRun.savedTime', index=9,
-      number=10, type=2, cpp_type=6, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=_b('\020\001'), file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='setRunSplit', full_name='ghostpacer.run.UploadedRun.setRunSplit', index=10,
+      name='setRunSplit', full_name='ghostpacer.run.UploadedRun.setRunSplit', index=4,
       number=11, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='userDist', full_name='ghostpacer.run.UploadedRun.userDist', index=11,
+      name='userDist', full_name='ghostpacer.run.UploadedRun.userDist', index=5,
       number=12, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
@@ -130,13 +131,21 @@ _UPLOADEDRUN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=58,
-  serialized_end=361,
+  serialized_start=83,
+  serialized_end=281,
 )
 
-_UPLOADEDRUN.fields_by_name['trackStartPoint'].enum_type = track__start__point__pb2._TRACKSTARTPOINT
+_UPLOADEDRUN.fields_by_name['timedPoints'].message_type = _TIMEDPOINT
+DESCRIPTOR.message_types_by_name['TimedPoint'] = _TIMEDPOINT
 DESCRIPTOR.message_types_by_name['UploadedRun'] = _UPLOADEDRUN
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+TimedPoint = _reflection.GeneratedProtocolMessageType('TimedPoint', (_message.Message,), dict(
+  DESCRIPTOR = _TIMEDPOINT,
+  __module__ = 'runup1_pb2'
+  # @@protoc_insertion_point(class_scope:ghostpacer.run.TimedPoint)
+  ))
+_sym_db.RegisterMessage(TimedPoint)
 
 UploadedRun = _reflection.GeneratedProtocolMessageType('UploadedRun', (_message.Message,), dict(
   DESCRIPTOR = _UPLOADEDRUN,
@@ -147,9 +156,4 @@ _sym_db.RegisterMessage(UploadedRun)
 
 
 DESCRIPTOR._options = None
-_UPLOADEDRUN.fields_by_name['compLatDist']._options = None
-_UPLOADEDRUN.fields_by_name['compLat']._options = None
-_UPLOADEDRUN.fields_by_name['compLonDist']._options = None
-_UPLOADEDRUN.fields_by_name['compLon']._options = None
-_UPLOADEDRUN.fields_by_name['savedTime']._options = None
 # @@protoc_insertion_point(module_scope)

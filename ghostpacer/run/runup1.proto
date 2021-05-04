@@ -1,25 +1,24 @@
 syntax = "proto3";
 
-import "track_start_point.proto";
-
 package ghostpacer.run;
 
 option go_package = "github.com/Ghost-Pacer/protocols/ghostpacer/run/go/runproto";
 
+message TimedPoint {
+  float x = 1;
+  float y = 2;
+  float time = 3;
+}
+
 message UploadedRun {
-  float totalDistance = 1;
+  reserved 1, 5, 6, 7, 8, 9, 10;
+
   float startTime = 2;
   float startLat = 3;
   float startLon = 4;
 
-  TrackStartPoint trackStartPoint = 5;
+  repeated TimedPoint timedPoints = 13 [packed = true];
 
-  repeated float compLatDist = 6 [packed = true];
-  repeated float compLat = 7 [packed = true];
-  repeated float compLonDist = 8 [packed = true];
-  repeated float compLon = 9 [packed = true];
-
-  repeated float savedTime = 10 [packed = true];
   float setRunSplit = 11;
   float userDist = 12;
 }
