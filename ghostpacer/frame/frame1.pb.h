@@ -525,6 +525,12 @@ class Avatar : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   double animationphase() const;
   void set_animationphase(double value);
 
+  // uint32 modelIndex = 10;
+  void clear_modelindex();
+  static const int kModelIndexFieldNumber = 10;
+  ::google::protobuf::uint32 modelindex() const;
+  void set_modelindex(::google::protobuf::uint32 value);
+
   // @@protoc_insertion_point(class_scope:ghostpacer.frame.Avatar)
  private:
 
@@ -536,6 +542,7 @@ class Avatar : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::ghostpacer::frame::Vec3* cameratovec_;
   ::ghostpacer::frame::Vec3* cameraupvec_;
   double animationphase_;
+  ::google::protobuf::uint32 modelindex_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_frame1_2eproto::TableStruct;
 };
@@ -1023,22 +1030,34 @@ class Frame : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
 
   // accessors -------------------------------------------------------
 
-  // .ghostpacer.frame.Avatar avatar = 1;
-  bool has_avatar() const;
-  void clear_avatar();
-  static const int kAvatarFieldNumber = 1;
+  // .ghostpacer.frame.Avatar avatar1 = 1;
+  bool has_avatar1() const;
+  void clear_avatar1();
+  static const int kAvatar1FieldNumber = 1;
   private:
-  const ::ghostpacer::frame::Avatar& _internal_avatar() const;
+  const ::ghostpacer::frame::Avatar& _internal_avatar1() const;
   public:
-  const ::ghostpacer::frame::Avatar& avatar() const;
-  ::ghostpacer::frame::Avatar* release_avatar();
-  ::ghostpacer::frame::Avatar* mutable_avatar();
-  void set_allocated_avatar(::ghostpacer::frame::Avatar* avatar);
+  const ::ghostpacer::frame::Avatar& avatar1() const;
+  ::ghostpacer::frame::Avatar* release_avatar1();
+  ::ghostpacer::frame::Avatar* mutable_avatar1();
+  void set_allocated_avatar1(::ghostpacer::frame::Avatar* avatar1);
 
-  // .ghostpacer.frame.Legend legend = 2;
+  // .ghostpacer.frame.Avatar avatar2 = 2;
+  bool has_avatar2() const;
+  void clear_avatar2();
+  static const int kAvatar2FieldNumber = 2;
+  private:
+  const ::ghostpacer::frame::Avatar& _internal_avatar2() const;
+  public:
+  const ::ghostpacer::frame::Avatar& avatar2() const;
+  ::ghostpacer::frame::Avatar* release_avatar2();
+  ::ghostpacer::frame::Avatar* mutable_avatar2();
+  void set_allocated_avatar2(::ghostpacer::frame::Avatar* avatar2);
+
+  // .ghostpacer.frame.Legend legend = 3;
   bool has_legend() const;
   void clear_legend();
-  static const int kLegendFieldNumber = 2;
+  static const int kLegendFieldNumber = 3;
   private:
   const ::ghostpacer::frame::Legend& _internal_legend() const;
   public:
@@ -1047,10 +1066,10 @@ class Frame : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::ghostpacer::frame::Legend* mutable_legend();
   void set_allocated_legend(::ghostpacer::frame::Legend* legend);
 
-  // .ghostpacer.frame.Menu menu = 3;
+  // .ghostpacer.frame.Menu menu = 4;
   bool has_menu() const;
   void clear_menu();
-  static const int kMenuFieldNumber = 3;
+  static const int kMenuFieldNumber = 4;
   private:
   const ::ghostpacer::frame::Menu& _internal_menu() const;
   public:
@@ -1059,10 +1078,10 @@ class Frame : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::ghostpacer::frame::Menu* mutable_menu();
   void set_allocated_menu(::ghostpacer::frame::Menu* menu);
 
-  // .ghostpacer.frame.Banner banner = 4;
+  // .ghostpacer.frame.Banner banner = 5;
   bool has_banner() const;
   void clear_banner();
-  static const int kBannerFieldNumber = 4;
+  static const int kBannerFieldNumber = 5;
   private:
   const ::ghostpacer::frame::Banner& _internal_banner() const;
   public:
@@ -1071,14 +1090,54 @@ class Frame : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::ghostpacer::frame::Banner* mutable_banner();
   void set_allocated_banner(::ghostpacer::frame::Banner* banner);
 
+  // .ghostpacer.frame.Vec3 cameraPosition = 6;
+  bool has_cameraposition() const;
+  void clear_cameraposition();
+  static const int kCameraPositionFieldNumber = 6;
+  private:
+  const ::ghostpacer::frame::Vec3& _internal_cameraposition() const;
+  public:
+  const ::ghostpacer::frame::Vec3& cameraposition() const;
+  ::ghostpacer::frame::Vec3* release_cameraposition();
+  ::ghostpacer::frame::Vec3* mutable_cameraposition();
+  void set_allocated_cameraposition(::ghostpacer::frame::Vec3* cameraposition);
+
+  // .ghostpacer.frame.Vec3 cameraToVec = 7;
+  bool has_cameratovec() const;
+  void clear_cameratovec();
+  static const int kCameraToVecFieldNumber = 7;
+  private:
+  const ::ghostpacer::frame::Vec3& _internal_cameratovec() const;
+  public:
+  const ::ghostpacer::frame::Vec3& cameratovec() const;
+  ::ghostpacer::frame::Vec3* release_cameratovec();
+  ::ghostpacer::frame::Vec3* mutable_cameratovec();
+  void set_allocated_cameratovec(::ghostpacer::frame::Vec3* cameratovec);
+
+  // .ghostpacer.frame.Vec3 cameraUpVec = 8;
+  bool has_cameraupvec() const;
+  void clear_cameraupvec();
+  static const int kCameraUpVecFieldNumber = 8;
+  private:
+  const ::ghostpacer::frame::Vec3& _internal_cameraupvec() const;
+  public:
+  const ::ghostpacer::frame::Vec3& cameraupvec() const;
+  ::ghostpacer::frame::Vec3* release_cameraupvec();
+  ::ghostpacer::frame::Vec3* mutable_cameraupvec();
+  void set_allocated_cameraupvec(::ghostpacer::frame::Vec3* cameraupvec);
+
   // @@protoc_insertion_point(class_scope:ghostpacer.frame.Frame)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::ghostpacer::frame::Avatar* avatar_;
+  ::ghostpacer::frame::Avatar* avatar1_;
+  ::ghostpacer::frame::Avatar* avatar2_;
   ::ghostpacer::frame::Legend* legend_;
   ::ghostpacer::frame::Menu* menu_;
   ::ghostpacer::frame::Banner* banner_;
+  ::ghostpacer::frame::Vec3* cameraposition_;
+  ::ghostpacer::frame::Vec3* cameratovec_;
+  ::ghostpacer::frame::Vec3* cameraupvec_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_frame1_2eproto::TableStruct;
 };
@@ -1643,6 +1702,20 @@ inline void Avatar::set_allocated_cameraupvec(::ghostpacer::frame::Vec3* camerau
   // @@protoc_insertion_point(field_set_allocated:ghostpacer.frame.Avatar.cameraUpVec)
 }
 
+// uint32 modelIndex = 10;
+inline void Avatar::clear_modelindex() {
+  modelindex_ = 0u;
+}
+inline ::google::protobuf::uint32 Avatar::modelindex() const {
+  // @@protoc_insertion_point(field_get:ghostpacer.frame.Avatar.modelIndex)
+  return modelindex_;
+}
+inline void Avatar::set_modelindex(::google::protobuf::uint32 value) {
+  
+  modelindex_ = value;
+  // @@protoc_insertion_point(field_set:ghostpacer.frame.Avatar.modelIndex)
+}
+
 // -------------------------------------------------------------------
 
 // Menu
@@ -1867,61 +1940,115 @@ inline void Legend::set_downactive(bool value) {
 
 // Frame
 
-// .ghostpacer.frame.Avatar avatar = 1;
-inline bool Frame::has_avatar() const {
-  return this != internal_default_instance() && avatar_ != NULL;
+// .ghostpacer.frame.Avatar avatar1 = 1;
+inline bool Frame::has_avatar1() const {
+  return this != internal_default_instance() && avatar1_ != NULL;
 }
-inline void Frame::clear_avatar() {
-  if (GetArenaNoVirtual() == NULL && avatar_ != NULL) {
-    delete avatar_;
+inline void Frame::clear_avatar1() {
+  if (GetArenaNoVirtual() == NULL && avatar1_ != NULL) {
+    delete avatar1_;
   }
-  avatar_ = NULL;
+  avatar1_ = NULL;
 }
-inline const ::ghostpacer::frame::Avatar& Frame::_internal_avatar() const {
-  return *avatar_;
+inline const ::ghostpacer::frame::Avatar& Frame::_internal_avatar1() const {
+  return *avatar1_;
 }
-inline const ::ghostpacer::frame::Avatar& Frame::avatar() const {
-  const ::ghostpacer::frame::Avatar* p = avatar_;
-  // @@protoc_insertion_point(field_get:ghostpacer.frame.Frame.avatar)
+inline const ::ghostpacer::frame::Avatar& Frame::avatar1() const {
+  const ::ghostpacer::frame::Avatar* p = avatar1_;
+  // @@protoc_insertion_point(field_get:ghostpacer.frame.Frame.avatar1)
   return p != NULL ? *p : *reinterpret_cast<const ::ghostpacer::frame::Avatar*>(
       &::ghostpacer::frame::_Avatar_default_instance_);
 }
-inline ::ghostpacer::frame::Avatar* Frame::release_avatar() {
-  // @@protoc_insertion_point(field_release:ghostpacer.frame.Frame.avatar)
+inline ::ghostpacer::frame::Avatar* Frame::release_avatar1() {
+  // @@protoc_insertion_point(field_release:ghostpacer.frame.Frame.avatar1)
   
-  ::ghostpacer::frame::Avatar* temp = avatar_;
-  avatar_ = NULL;
+  ::ghostpacer::frame::Avatar* temp = avatar1_;
+  avatar1_ = NULL;
   return temp;
 }
-inline ::ghostpacer::frame::Avatar* Frame::mutable_avatar() {
+inline ::ghostpacer::frame::Avatar* Frame::mutable_avatar1() {
   
-  if (avatar_ == NULL) {
+  if (avatar1_ == NULL) {
     auto* p = CreateMaybeMessage<::ghostpacer::frame::Avatar>(GetArenaNoVirtual());
-    avatar_ = p;
+    avatar1_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:ghostpacer.frame.Frame.avatar)
-  return avatar_;
+  // @@protoc_insertion_point(field_mutable:ghostpacer.frame.Frame.avatar1)
+  return avatar1_;
 }
-inline void Frame::set_allocated_avatar(::ghostpacer::frame::Avatar* avatar) {
+inline void Frame::set_allocated_avatar1(::ghostpacer::frame::Avatar* avatar1) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
-    delete avatar_;
+    delete avatar1_;
   }
-  if (avatar) {
+  if (avatar1) {
     ::google::protobuf::Arena* submessage_arena = NULL;
     if (message_arena != submessage_arena) {
-      avatar = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, avatar, submessage_arena);
+      avatar1 = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, avatar1, submessage_arena);
     }
     
   } else {
     
   }
-  avatar_ = avatar;
-  // @@protoc_insertion_point(field_set_allocated:ghostpacer.frame.Frame.avatar)
+  avatar1_ = avatar1;
+  // @@protoc_insertion_point(field_set_allocated:ghostpacer.frame.Frame.avatar1)
 }
 
-// .ghostpacer.frame.Legend legend = 2;
+// .ghostpacer.frame.Avatar avatar2 = 2;
+inline bool Frame::has_avatar2() const {
+  return this != internal_default_instance() && avatar2_ != NULL;
+}
+inline void Frame::clear_avatar2() {
+  if (GetArenaNoVirtual() == NULL && avatar2_ != NULL) {
+    delete avatar2_;
+  }
+  avatar2_ = NULL;
+}
+inline const ::ghostpacer::frame::Avatar& Frame::_internal_avatar2() const {
+  return *avatar2_;
+}
+inline const ::ghostpacer::frame::Avatar& Frame::avatar2() const {
+  const ::ghostpacer::frame::Avatar* p = avatar2_;
+  // @@protoc_insertion_point(field_get:ghostpacer.frame.Frame.avatar2)
+  return p != NULL ? *p : *reinterpret_cast<const ::ghostpacer::frame::Avatar*>(
+      &::ghostpacer::frame::_Avatar_default_instance_);
+}
+inline ::ghostpacer::frame::Avatar* Frame::release_avatar2() {
+  // @@protoc_insertion_point(field_release:ghostpacer.frame.Frame.avatar2)
+  
+  ::ghostpacer::frame::Avatar* temp = avatar2_;
+  avatar2_ = NULL;
+  return temp;
+}
+inline ::ghostpacer::frame::Avatar* Frame::mutable_avatar2() {
+  
+  if (avatar2_ == NULL) {
+    auto* p = CreateMaybeMessage<::ghostpacer::frame::Avatar>(GetArenaNoVirtual());
+    avatar2_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:ghostpacer.frame.Frame.avatar2)
+  return avatar2_;
+}
+inline void Frame::set_allocated_avatar2(::ghostpacer::frame::Avatar* avatar2) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete avatar2_;
+  }
+  if (avatar2) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      avatar2 = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, avatar2, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  avatar2_ = avatar2;
+  // @@protoc_insertion_point(field_set_allocated:ghostpacer.frame.Frame.avatar2)
+}
+
+// .ghostpacer.frame.Legend legend = 3;
 inline bool Frame::has_legend() const {
   return this != internal_default_instance() && legend_ != NULL;
 }
@@ -1975,7 +2102,7 @@ inline void Frame::set_allocated_legend(::ghostpacer::frame::Legend* legend) {
   // @@protoc_insertion_point(field_set_allocated:ghostpacer.frame.Frame.legend)
 }
 
-// .ghostpacer.frame.Menu menu = 3;
+// .ghostpacer.frame.Menu menu = 4;
 inline bool Frame::has_menu() const {
   return this != internal_default_instance() && menu_ != NULL;
 }
@@ -2029,7 +2156,7 @@ inline void Frame::set_allocated_menu(::ghostpacer::frame::Menu* menu) {
   // @@protoc_insertion_point(field_set_allocated:ghostpacer.frame.Frame.menu)
 }
 
-// .ghostpacer.frame.Banner banner = 4;
+// .ghostpacer.frame.Banner banner = 5;
 inline bool Frame::has_banner() const {
   return this != internal_default_instance() && banner_ != NULL;
 }
@@ -2081,6 +2208,168 @@ inline void Frame::set_allocated_banner(::ghostpacer::frame::Banner* banner) {
   }
   banner_ = banner;
   // @@protoc_insertion_point(field_set_allocated:ghostpacer.frame.Frame.banner)
+}
+
+// .ghostpacer.frame.Vec3 cameraPosition = 6;
+inline bool Frame::has_cameraposition() const {
+  return this != internal_default_instance() && cameraposition_ != NULL;
+}
+inline void Frame::clear_cameraposition() {
+  if (GetArenaNoVirtual() == NULL && cameraposition_ != NULL) {
+    delete cameraposition_;
+  }
+  cameraposition_ = NULL;
+}
+inline const ::ghostpacer::frame::Vec3& Frame::_internal_cameraposition() const {
+  return *cameraposition_;
+}
+inline const ::ghostpacer::frame::Vec3& Frame::cameraposition() const {
+  const ::ghostpacer::frame::Vec3* p = cameraposition_;
+  // @@protoc_insertion_point(field_get:ghostpacer.frame.Frame.cameraPosition)
+  return p != NULL ? *p : *reinterpret_cast<const ::ghostpacer::frame::Vec3*>(
+      &::ghostpacer::frame::_Vec3_default_instance_);
+}
+inline ::ghostpacer::frame::Vec3* Frame::release_cameraposition() {
+  // @@protoc_insertion_point(field_release:ghostpacer.frame.Frame.cameraPosition)
+  
+  ::ghostpacer::frame::Vec3* temp = cameraposition_;
+  cameraposition_ = NULL;
+  return temp;
+}
+inline ::ghostpacer::frame::Vec3* Frame::mutable_cameraposition() {
+  
+  if (cameraposition_ == NULL) {
+    auto* p = CreateMaybeMessage<::ghostpacer::frame::Vec3>(GetArenaNoVirtual());
+    cameraposition_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:ghostpacer.frame.Frame.cameraPosition)
+  return cameraposition_;
+}
+inline void Frame::set_allocated_cameraposition(::ghostpacer::frame::Vec3* cameraposition) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete cameraposition_;
+  }
+  if (cameraposition) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      cameraposition = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, cameraposition, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  cameraposition_ = cameraposition;
+  // @@protoc_insertion_point(field_set_allocated:ghostpacer.frame.Frame.cameraPosition)
+}
+
+// .ghostpacer.frame.Vec3 cameraToVec = 7;
+inline bool Frame::has_cameratovec() const {
+  return this != internal_default_instance() && cameratovec_ != NULL;
+}
+inline void Frame::clear_cameratovec() {
+  if (GetArenaNoVirtual() == NULL && cameratovec_ != NULL) {
+    delete cameratovec_;
+  }
+  cameratovec_ = NULL;
+}
+inline const ::ghostpacer::frame::Vec3& Frame::_internal_cameratovec() const {
+  return *cameratovec_;
+}
+inline const ::ghostpacer::frame::Vec3& Frame::cameratovec() const {
+  const ::ghostpacer::frame::Vec3* p = cameratovec_;
+  // @@protoc_insertion_point(field_get:ghostpacer.frame.Frame.cameraToVec)
+  return p != NULL ? *p : *reinterpret_cast<const ::ghostpacer::frame::Vec3*>(
+      &::ghostpacer::frame::_Vec3_default_instance_);
+}
+inline ::ghostpacer::frame::Vec3* Frame::release_cameratovec() {
+  // @@protoc_insertion_point(field_release:ghostpacer.frame.Frame.cameraToVec)
+  
+  ::ghostpacer::frame::Vec3* temp = cameratovec_;
+  cameratovec_ = NULL;
+  return temp;
+}
+inline ::ghostpacer::frame::Vec3* Frame::mutable_cameratovec() {
+  
+  if (cameratovec_ == NULL) {
+    auto* p = CreateMaybeMessage<::ghostpacer::frame::Vec3>(GetArenaNoVirtual());
+    cameratovec_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:ghostpacer.frame.Frame.cameraToVec)
+  return cameratovec_;
+}
+inline void Frame::set_allocated_cameratovec(::ghostpacer::frame::Vec3* cameratovec) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete cameratovec_;
+  }
+  if (cameratovec) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      cameratovec = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, cameratovec, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  cameratovec_ = cameratovec;
+  // @@protoc_insertion_point(field_set_allocated:ghostpacer.frame.Frame.cameraToVec)
+}
+
+// .ghostpacer.frame.Vec3 cameraUpVec = 8;
+inline bool Frame::has_cameraupvec() const {
+  return this != internal_default_instance() && cameraupvec_ != NULL;
+}
+inline void Frame::clear_cameraupvec() {
+  if (GetArenaNoVirtual() == NULL && cameraupvec_ != NULL) {
+    delete cameraupvec_;
+  }
+  cameraupvec_ = NULL;
+}
+inline const ::ghostpacer::frame::Vec3& Frame::_internal_cameraupvec() const {
+  return *cameraupvec_;
+}
+inline const ::ghostpacer::frame::Vec3& Frame::cameraupvec() const {
+  const ::ghostpacer::frame::Vec3* p = cameraupvec_;
+  // @@protoc_insertion_point(field_get:ghostpacer.frame.Frame.cameraUpVec)
+  return p != NULL ? *p : *reinterpret_cast<const ::ghostpacer::frame::Vec3*>(
+      &::ghostpacer::frame::_Vec3_default_instance_);
+}
+inline ::ghostpacer::frame::Vec3* Frame::release_cameraupvec() {
+  // @@protoc_insertion_point(field_release:ghostpacer.frame.Frame.cameraUpVec)
+  
+  ::ghostpacer::frame::Vec3* temp = cameraupvec_;
+  cameraupvec_ = NULL;
+  return temp;
+}
+inline ::ghostpacer::frame::Vec3* Frame::mutable_cameraupvec() {
+  
+  if (cameraupvec_ == NULL) {
+    auto* p = CreateMaybeMessage<::ghostpacer::frame::Vec3>(GetArenaNoVirtual());
+    cameraupvec_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:ghostpacer.frame.Frame.cameraUpVec)
+  return cameraupvec_;
+}
+inline void Frame::set_allocated_cameraupvec(::ghostpacer::frame::Vec3* cameraupvec) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete cameraupvec_;
+  }
+  if (cameraupvec) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      cameraupvec = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, cameraupvec, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  cameraupvec_ = cameraupvec;
+  // @@protoc_insertion_point(field_set_allocated:ghostpacer.frame.Frame.cameraUpVec)
 }
 
 #ifdef __GNUC__

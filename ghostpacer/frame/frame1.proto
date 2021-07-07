@@ -24,9 +24,12 @@ message Avatar {
   Vec3 avatarUpVec = 7;
   double animationPhase = 3;
 
+  // Camera vectors should not be included in final protobuf
   Vec3 cameraPosition = 4;
   Vec3 cameraToVec = 8;
   Vec3 cameraUpVec = 9;
+
+  uint32 modelIndex = 10;
 }
 
 message Menu {
@@ -51,8 +54,13 @@ message Legend {
 }
 
 message Frame {
-  Avatar avatar = 1;
-  Legend legend = 2;
-  Menu menu = 3;
-  Banner banner = 4;
+  Avatar avatar1 = 1;
+  Avatar avatar2 = 2;
+  Legend legend = 3;
+  Menu menu = 4;
+  Banner banner = 5;
+
+  Vec3 cameraPosition = 6;
+  Vec3 cameraToVec = 7;
+  Vec3 cameraUpVec = 8;
 }

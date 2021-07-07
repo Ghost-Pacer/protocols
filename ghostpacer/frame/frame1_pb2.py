@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ghostpacer.frame',
   syntax='proto3',
   serialized_options=_b('Z?github.com/Ghost-Pacer/protocols/ghostpacer/frame/go/frameproto'),
-  serialized_pb=_b('\n\x0c\x66rame1.proto\x12\x10ghostpacer.frame\"\'\n\x04Vec3\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\x12\t\n\x01z\x18\x03 \x01(\x01\"x\n\x04Mat3\x12$\n\x04row1\x18\x01 \x01(\x0b\x32\x16.ghostpacer.frame.Vec3\x12$\n\x04row2\x18\x02 \x01(\x0b\x32\x16.ghostpacer.frame.Vec3\x12$\n\x04row3\x18\x03 \x01(\x0b\x32\x16.ghostpacer.frame.Vec3\"\xc0\x02\n\x06\x41vatar\x12.\n\x0e\x61vatarPosition\x18\x01 \x01(\x0b\x32\x16.ghostpacer.frame.Vec3\x12+\n\x0b\x61vatarToVec\x18\x06 \x01(\x0b\x32\x16.ghostpacer.frame.Vec3\x12+\n\x0b\x61vatarUpVec\x18\x07 \x01(\x0b\x32\x16.ghostpacer.frame.Vec3\x12\x16\n\x0e\x61nimationPhase\x18\x03 \x01(\x01\x12.\n\x0e\x63\x61meraPosition\x18\x04 \x01(\x0b\x32\x16.ghostpacer.frame.Vec3\x12+\n\x0b\x63\x61meraToVec\x18\x08 \x01(\x0b\x32\x16.ghostpacer.frame.Vec3\x12+\n\x0b\x63\x61meraUpVec\x18\t \x01(\x0b\x32\x16.ghostpacer.frame.Vec3J\x04\x08\x02\x10\x03J\x04\x08\x05\x10\x06\"1\n\x04Menu\x12\x0f\n\x07\x65ntries\x18\x01 \x03(\t\x12\x18\n\x10\x61\x63tiveEntryIndex\x18\x02 \x01(\r\"m\n\x06\x42\x61nner\x12\r\n\x05lines\x18\x01 \x03(\t\x12\x33\n\x08position\x18\x02 \x01(\x0e\x32!.ghostpacer.frame.Banner.Position\"\x1f\n\x08Position\x12\x07\n\x03TOP\x10\x00\x12\n\n\x06\x43\x45NTER\x10\x01\"D\n\x06Legend\x12\x10\n\x08upActive\x18\x01 \x01(\x08\x12\x14\n\x0cselectActive\x18\x02 \x01(\x08\x12\x12\n\ndownActive\x18\x03 \x01(\x08\"\xab\x01\n\x05\x46rame\x12(\n\x06\x61vatar\x18\x01 \x01(\x0b\x32\x18.ghostpacer.frame.Avatar\x12(\n\x06legend\x18\x02 \x01(\x0b\x32\x18.ghostpacer.frame.Legend\x12$\n\x04menu\x18\x03 \x01(\x0b\x32\x16.ghostpacer.frame.Menu\x12(\n\x06\x62\x61nner\x18\x04 \x01(\x0b\x32\x18.ghostpacer.frame.BannerBAZ?github.com/Ghost-Pacer/protocols/ghostpacer/frame/go/frameprotob\x06proto3')
+  serialized_pb=_b('\n\x0c\x66rame1.proto\x12\x10ghostpacer.frame\"\'\n\x04Vec3\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\x12\t\n\x01z\x18\x03 \x01(\x01\"x\n\x04Mat3\x12$\n\x04row1\x18\x01 \x01(\x0b\x32\x16.ghostpacer.frame.Vec3\x12$\n\x04row2\x18\x02 \x01(\x0b\x32\x16.ghostpacer.frame.Vec3\x12$\n\x04row3\x18\x03 \x01(\x0b\x32\x16.ghostpacer.frame.Vec3\"\xd4\x02\n\x06\x41vatar\x12.\n\x0e\x61vatarPosition\x18\x01 \x01(\x0b\x32\x16.ghostpacer.frame.Vec3\x12+\n\x0b\x61vatarToVec\x18\x06 \x01(\x0b\x32\x16.ghostpacer.frame.Vec3\x12+\n\x0b\x61vatarUpVec\x18\x07 \x01(\x0b\x32\x16.ghostpacer.frame.Vec3\x12\x16\n\x0e\x61nimationPhase\x18\x03 \x01(\x01\x12.\n\x0e\x63\x61meraPosition\x18\x04 \x01(\x0b\x32\x16.ghostpacer.frame.Vec3\x12+\n\x0b\x63\x61meraToVec\x18\x08 \x01(\x0b\x32\x16.ghostpacer.frame.Vec3\x12+\n\x0b\x63\x61meraUpVec\x18\t \x01(\x0b\x32\x16.ghostpacer.frame.Vec3\x12\x12\n\nmodelIndex\x18\n \x01(\rJ\x04\x08\x02\x10\x03J\x04\x08\x05\x10\x06\"1\n\x04Menu\x12\x0f\n\x07\x65ntries\x18\x01 \x03(\t\x12\x18\n\x10\x61\x63tiveEntryIndex\x18\x02 \x01(\r\"m\n\x06\x42\x61nner\x12\r\n\x05lines\x18\x01 \x03(\t\x12\x33\n\x08position\x18\x02 \x01(\x0e\x32!.ghostpacer.frame.Banner.Position\"\x1f\n\x08Position\x12\x07\n\x03TOP\x10\x00\x12\n\n\x06\x43\x45NTER\x10\x01\"D\n\x06Legend\x12\x10\n\x08upActive\x18\x01 \x01(\x08\x12\x14\n\x0cselectActive\x18\x02 \x01(\x08\x12\x12\n\ndownActive\x18\x03 \x01(\x08\"\xe1\x02\n\x05\x46rame\x12)\n\x07\x61vatar1\x18\x01 \x01(\x0b\x32\x18.ghostpacer.frame.Avatar\x12)\n\x07\x61vatar2\x18\x02 \x01(\x0b\x32\x18.ghostpacer.frame.Avatar\x12(\n\x06legend\x18\x03 \x01(\x0b\x32\x18.ghostpacer.frame.Legend\x12$\n\x04menu\x18\x04 \x01(\x0b\x32\x16.ghostpacer.frame.Menu\x12(\n\x06\x62\x61nner\x18\x05 \x01(\x0b\x32\x18.ghostpacer.frame.Banner\x12.\n\x0e\x63\x61meraPosition\x18\x06 \x01(\x0b\x32\x16.ghostpacer.frame.Vec3\x12+\n\x0b\x63\x61meraToVec\x18\x07 \x01(\x0b\x32\x16.ghostpacer.frame.Vec3\x12+\n\x0b\x63\x61meraUpVec\x18\x08 \x01(\x0b\x32\x16.ghostpacer.frame.Vec3BAZ?github.com/Ghost-Pacer/protocols/ghostpacer/frame/go/frameprotob\x06proto3')
 )
 
 
@@ -41,8 +41,8 @@ _BANNER_POSITION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=649,
-  serialized_end=680,
+  serialized_start=669,
+  serialized_end=700,
 )
 _sym_db.RegisterEnumDescriptor(_BANNER_POSITION)
 
@@ -193,6 +193,13 @@ _AVATAR = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='modelIndex', full_name='ghostpacer.frame.Avatar.modelIndex', index=7,
+      number=10, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -206,7 +213,7 @@ _AVATAR = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=198,
-  serialized_end=518,
+  serialized_end=538,
 )
 
 
@@ -243,8 +250,8 @@ _MENU = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=520,
-  serialized_end=569,
+  serialized_start=540,
+  serialized_end=589,
 )
 
 
@@ -282,8 +289,8 @@ _BANNER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=571,
-  serialized_end=680,
+  serialized_start=591,
+  serialized_end=700,
 )
 
 
@@ -327,8 +334,8 @@ _LEGEND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=682,
-  serialized_end=750,
+  serialized_start=702,
+  serialized_end=770,
 )
 
 
@@ -340,29 +347,57 @@ _FRAME = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='avatar', full_name='ghostpacer.frame.Frame.avatar', index=0,
+      name='avatar1', full_name='ghostpacer.frame.Frame.avatar1', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='legend', full_name='ghostpacer.frame.Frame.legend', index=1,
+      name='avatar2', full_name='ghostpacer.frame.Frame.avatar2', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='menu', full_name='ghostpacer.frame.Frame.menu', index=2,
+      name='legend', full_name='ghostpacer.frame.Frame.legend', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='banner', full_name='ghostpacer.frame.Frame.banner', index=3,
+      name='menu', full_name='ghostpacer.frame.Frame.menu', index=3,
       number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='banner', full_name='ghostpacer.frame.Frame.banner', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='cameraPosition', full_name='ghostpacer.frame.Frame.cameraPosition', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='cameraToVec', full_name='ghostpacer.frame.Frame.cameraToVec', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='cameraUpVec', full_name='ghostpacer.frame.Frame.cameraUpVec', index=7,
+      number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -379,8 +414,8 @@ _FRAME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=753,
-  serialized_end=924,
+  serialized_start=773,
+  serialized_end=1126,
 )
 
 _MAT3.fields_by_name['row1'].message_type = _VEC3
@@ -394,10 +429,14 @@ _AVATAR.fields_by_name['cameraToVec'].message_type = _VEC3
 _AVATAR.fields_by_name['cameraUpVec'].message_type = _VEC3
 _BANNER.fields_by_name['position'].enum_type = _BANNER_POSITION
 _BANNER_POSITION.containing_type = _BANNER
-_FRAME.fields_by_name['avatar'].message_type = _AVATAR
+_FRAME.fields_by_name['avatar1'].message_type = _AVATAR
+_FRAME.fields_by_name['avatar2'].message_type = _AVATAR
 _FRAME.fields_by_name['legend'].message_type = _LEGEND
 _FRAME.fields_by_name['menu'].message_type = _MENU
 _FRAME.fields_by_name['banner'].message_type = _BANNER
+_FRAME.fields_by_name['cameraPosition'].message_type = _VEC3
+_FRAME.fields_by_name['cameraToVec'].message_type = _VEC3
+_FRAME.fields_by_name['cameraUpVec'].message_type = _VEC3
 DESCRIPTOR.message_types_by_name['Vec3'] = _VEC3
 DESCRIPTOR.message_types_by_name['Mat3'] = _MAT3
 DESCRIPTOR.message_types_by_name['Avatar'] = _AVATAR
